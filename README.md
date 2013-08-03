@@ -1,8 +1,8 @@
-# WEB+DB PRESS Voll.69 詳解GitHub
+# GitHub実践入門（仮）
 
 特設サイトはこちら
 
-  [http://hirocaster.github.com/wdpress69/](http://hirocaster.github.com/wdpress69/)
+  [http://github-book.github.io/first-pr/](http://github-book.github.io/first-pr/)
 
 Pull Requestをマージする人へ
 
