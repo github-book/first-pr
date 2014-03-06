@@ -1,4 +1,4 @@
-# GitHub実践入門（仮）
+# GitHub実践入門 ~Pull Requestによる開発の変革 (WEB+DB PRESS plus)
 
 特設サイトはこちら
 
