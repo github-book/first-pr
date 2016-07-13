@@ -65,6 +65,7 @@
 <p>(現在<span id="impression_num"></span>件の感想が寄せられています)</p>
 
 <p class="impression">Hello World!!</p>
+<p class="impression">Hello World</p>
 <p class="impression">今まで断片的な知識しかなかったのが，本書のおかげで理解が深まりました．</p>
 <p class="impression">急遽、GitHugを使うこととなっため、勉強を始めました。</p>
 <p class="impression">トピックブランチという慣習を学べたのが良かった</p>
