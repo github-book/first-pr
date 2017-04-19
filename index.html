@@ -1043,6 +1043,9 @@ Pull Request初体験です！まるで一つのコミュニティのように�
 <script type="text/javascript">
 $(document).ready(function(){
   $("#impression_num").text( $("p.impression").length );
+
+  $("p.impression").wrapAll('<div />');
+  $("p.impression").parent().html($("p.impression").get().reverse());
 });
 </script>
 
