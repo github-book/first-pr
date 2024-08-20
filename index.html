@@ -1,1147 +1,1208 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Wdpress69 : " />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<head>
+  <meta charset='utf-8' />
+  <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+  <meta name="description" content="Wdpress69 : " />
 
-    <title>GitHub実践入門 : はじめての Pull Request 特設サイト</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <script type="text/javascript">
+  <title>GitHub実践入門 : はじめての Pull Request 特設サイト</title>
 
-        var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-1537271-13']);
-          _gaq.push(['_trackPageview']);
+  <script type="text/javascript">
 
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1537271-13']);
+    _gaq.push(['_trackPageview']);
 
-    </script>
-  </head>
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-  <body>
+  </script>
+</head>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/github-book/first-pr">Give me Pull Request</a>
+<body>
 
-          <h1 id="project_title">はじめての Pull Request</h1>
-          <h2 id="project_tagline">GitHub実践入門</h2>
+  <!-- HEADER -->
+  <div id="header_wrap" class="outer">
+    <header class="inner">
+      <a id="forkme_banner" href="https://github.com/github-book/first-pr">Give me Pull Request</a>
 
-          <section id="wdpress">
-            <a class="wdpress_link" href="http://gihyo.jp/book/2014/978-4-7741-6366-6/support">GitHub実践入門</a>
-          </section>
-        </header>
-    </div>
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>Pull Requestを送ってみよう！</h3>
-<p>本サイトはGitHub実践入門にて、はじめてGitHubで Pull Request を送ってみるために特設されたサイトです。</p>
-<p>本書をお買い上げの上、お試し頂けますと幸いです。</p>
-<p>本ページに対応するリポジトリは、ページ上部の「Give me Pull Request」を押すと表示されます。</p>
-<h3>ご注意</h3>
+      <h1 id="project_title">はじめての Pull Request</h1>
+      <h2 id="project_tagline">GitHub実践入門</h2>
 
-<p>本書の感想と関係のないことや誹謗中傷などは、管理者の判断で掲載を行わない可能性があります。</p>
-
-<p>今回のリポジトリにPull Requestを送っていただいた方には基本的にリポジトリへの権限を差し上げます。Pull Requestを受ける側としても触ってみて、実践してください。</p>
-
-<p>一方、権限を差し上げた方が、Pull Request受信者として不適切な行為を行った場合、管理者の判断でリポジトリへの権限を削除する可能性があります。</p>
-
-<p>本書に登場するサンプルリポジトリは、当面の間は筆者や有志（Pull Requestを試される読者のみなさんを含む）を中心にメンテナンスされていく予定です。ただし、本書発売後、月日が経過している場合には反応が遅れる、あるいは反映できない可能性があります。ぜひ第7章やサンプルリポジトリのページを参照のうえ、ご協力ください。</p>
-
-<h3>本書の感想</h3>
-<p>(現在<span id="impression_num"></span>件の感想が寄せられています)</p>
-<p>新しいコメントは、表示されているコメントの最下部（「↑最新のコメント」と表記）に記入してください。</p>
-<p class="impression">大変分かりやすいです！この本で楽しく勉強しています！</p>
-<p class="impression">感謝です!わかりやすい!</p>
-<p class="impression">分かりやすいです。ありがとうございます！</p>
-<p class="impression">pull requestも試せて良い本です。(@me)</p>
-<p class="impression">gitの使い方がわかり、とても良い本だと思います</p>
-<p class="impression">役立ってます。</p>
-<p class="impression">2019年でもGitHubの仕様は大きくは変わってないようで、本書のおかげでGitHubの理解が進みました！</p>
-<p class="impression">IT戦闘力が上がりました</p>
-<p class="impression">Eduardo Alano</p>
-<p class="impression">いつも楽しく読んでいます（@otakeuchi）</p>
-<p class="impression">ソフトウェア業界に転職し、GitHubを勉強しています。この本はとても役に立ちます！</p>
-<p class="impression">仕事でgithubを使うことになりそうなので、2年ぶりくらいにやり直してます</p>
-<p class="impression">楽しくやってる</p>
-<p class="impression">初めてのPRです。まだ些細なことしかできませんが、どんどん開発に携われるようになっていきたいです。</p>
-<p class="impression">git hub面白いです。この本もとても分かりやすくて良書だと思います。</p>
-<p class="impression">I read this book interesting.</p>
-<p class="impression">開発出来るようになりたいです。</p>
-<p class="impression">実践を意識したこの演習法がとっても好きです。</p>
-<p class="impression"> Pull Requestの練習ありがとうございます。これからGithubを使っていけるようにがんばります。</p>
-<p class="impression"> 2017年現在、GitHubのUIレイアウトも本書の内容から大分変化しています。マイナーな問題かもしれませんが、できたらフォローお願いします。</p>
-<p class="impression"> Macのvimで編集しています。画期的な演習ですね。</p>
-<p class="impression"> このようなサイトを準備していただき、ありがとうございます。</p>
-<p class="impression"> すごくいい！</p>
-<p class="impression">"git remote add"と"git push -u"が今一理解できていないですが、便利そうです</p>
-<p class="impression">現場で使うことになり勉強中です。とても役に立っています。</p>
-<p class="impression">楽しんで身に着けます</p>
-<p class="impression">ありがとうございます。まだ理解しきれていませんが、いろいろ試してみたいと思います。</p>
-<p class="impression">git & githubは奥が深いですね～</p>
-<p class="impression">Git,GitHub を用いた開発フローが良くわかりました。開発が楽しくなりそうです。ありがとうございました。とはいえ、まだまだ、修行が必要そうです。(^^;;) </p>
-<p class="impression">わかりやすいです。とても勉強になりました。</p>
-<p class="impression">読みやすく、分かりやすく、丁寧だと感じました。</p>
-<p class="impression">実際に操作しながら学習できるのが凄く良いです。</p>
-<p class="impression">thank you</p>
-<p class="impression">git & githubは奥が深いですね～</p>
-<p class="impression">ベリッシモ...分かりやすいッ!</p>
-<p class="impression">大変楽しく学ばせていただいています</p>
-<p class="impression">遅ればせながら、Pull Request</p>
-<p class="impression">参考になりました。</p>
-<p class="impression">参考になりましたですよ〜</p>
-<p class="impression">わかりやすいです。とても勉強になりました。</p>
-<p class="impression">いつも楽しく読んでいます。</p>
-<p class="impression">初めてのgithubです！</p>
-<p class="impression">実際にできるので理解が深まり感謝です！！</p>
-<p class="impression">試行錯誤しながら、ちょっとずつ試してます。</p>
-<p class="impression">この本はスゴイぞ！とても参考になりました</p>
-<p class="impression">ありがとうございます！</p>
-<p class="impression">例が正確なので助かります。</p>
-<p class="impression">わかりやすいです。</p>
-<p class="impression">ありがとマイファザー</p>
-<p class="impression">First Pull Request!!!</p>
-<p class="impression">#### Thank you! ####</p>
-<p class="impression">#### Thank you2! ####</p>
-<p class="impression">今まで見てきたどのGitHubの本よりも分かりやすかったです!</p>
-<p class="impression">I'm studying git/github. This is an awesome book.</p>
-<p class="impression">とても勉強になってます！</p>
-<p class="impression">My First Pull Request</p>
-<p class="impression">プルプルしながらプルリクエスト…</p>
-<p class="impression">Hello World!!</p>
-<p class="impression">今まで断片的な知識しかなかったのが，本書のおかげで理解が深まりました．</p>
-<p class="impression">急遽、GitHugを使うこととなっため、勉強を始めました。</p>
-<p class="impression">Pull Reuestの機会があるなんて、すごく良いです！</p>
-<p class="impression">トピックブランチという慣習を学べたのが良かった</p>
-<p class="impression">会社でGitHubを使うことになったので読み始めました</p>
-<p class="impression">すごいわかりやすくて助かります！ありがとうございます！</p>
-<p class="impression">これでGitHub使いになれました！ありがとうございます！</p>
-<p class="impression">勉強になります</p>
-<p class="impression">このようにPull Requestを実際に試しながら、学べるのはすごくいいですね。目指せ脱初心者!2016/06/12(<a href="https://github.com/YutoMoon">@YutoMoon</a>)</p>
-<p class="impression">Git 初心者には始めの部分がとても難しかったですが、以前よりも GitHub を理解できるようになりました。</p>
-<p class="impression">面白い！！github.comと本の説明に使っている画面レイアウトが異なっていました。</p>
-<p class="impression">面白い。どんどん学ぶぞ!!! 2016/05/30 (<a href="https://github.com/MchikA1216">@MchikA1216</a>)</p>
-<p class="impression">Funtime!</p>
-<p class="impression">プルリクエストの練習です。追加修正</p>
-<p class="impression">タイトルの通りGitHubを実践的に学べるすごい入門書。2016/05/26 (<a href="https://github.com/Hirotacas">@Hirotaca</a>)</p>
-<p class="impression">初心者には敷居が高かった初PRの機会を与えてくださった本書に圧倒的感謝🙏(<a href="https://github.com/nametaketakewo">@nametaketakewo</a>)</p>
-<p class="impression">全くの初心者の私は,bash上でのエディタの開き方が分からず4章で行き詰りました。(<a href="https://github.com/A-taro">@A-taro</a>)</p>
-<p class="impression">初めてプルリクエストしました！</p>
-<p class="impression">最近プルリクをやっていなかったので、練習になり、大変助かります！</p>
-<p class="impression">実際に手を動かしてシステムの理解が深まるのはいいですね。現在 2016/04/25-14:04 です。</p>
-<p class="impression">gitのコマンドでの操作が身につきました。GitHubについても細かく説明されていて、とてもわかりやすいです!!</p>
-<p class="impression">こんなに多くの人が勉強していることに驚きました。負けてられない。<a href="https://github.com/straysheep3">@straysheep3</a></p>
-<p class="impression">pull request</p>
-<p class="impression">初プルリクエスト、初Fork！たのしい！(@mekemeke9)</p>
-<p class="impression">新社会人に向けて勉強しています！丁寧で初心者の僕にもわかりました！プルリクってドキドキ！</p>
-<p class="impression">とてもいい本だ</p>
-<p class="impression">会社でこっそり勉強中</p>
-<p class="impression">Github勉強</p>
-<p class="impression">I am studying GitHub with the book.</p>
-<p class="impression">初プルリクエスト。どきどき。</p>
-<p class="impression">とても分かりやすいです！</p>
-<p class="impression">Github勉強させていただいてます！わかりやすくて凄く参考になります！</p>
-<p class="impression">はじめてのプルリクエスト</p>
-<p class="impression">実際に操作しながら勉強できるので入門書として最適だと思います。</p>
-<p class="impression">はじめてのぷるりくえすと (<a href="https://github.com/t-hirayama">@t-hirayama</a>)</p>
-<p class="impression">「とにかく一度使ってみる！」という学び方には最適なテキストだと思います。がんばります！</p>
-<p class="impression">まだよくわからない！！！＞＜</p>
-<p class="impression">githubの苦手意識が一気に消えました！ありがとうございました！</p>
-<p class="impression">2016年、遅ればせながら GitHub の勉強を始めました! 分かりやすく大変参考にしております! (<a href="https://github.com/Neos21GitHub" title="GitHub - Neos21GitHub">@Neos21</a>)</p>
-<p class="impression">実践的でとても勉強になります！</p>
-<p class="impression">LGTM です！</p>
-<p class="impression">勉強中</P>
-<p class="impression">やっとこさで、ここまで来ました!</p>
-<p class="impression">ソーシャルコーディングの<em>らしさ</em></p>
-<p class="impression">とっても勉強になります！！</p>
-<p class="impression">プルリクってドキドキ！</p>
-<p class="impression">プルリクってドキドキ！！</p>
-<p class="impression">初プルリク！</p>
-<p class="impression">はじめてプルリク</p>
-<p class="impression">my first pull-req...</p>
-<p class="impression">大変勉強になりました！</p>
-<p class="impression">プルリクTest Thank you from tyx</p>
-<p class="impression">手順に従って進められるので、安心感を持って勉強できています。</p>
-<p class="impression">非常にわかりやすいです。ありがとうございます。</p>
-<p class="impression">はじめてのPullRequestです。</p>
-<p class="impression">勉強させてもらってます。</p>
-<p class="impression">Very Good !! </p>
-<p class="impression">Pull Requestを初めて行うことが出来ました！ありがとうございます。</p>
-<p class="impression">グッドモーニング dear github-book~~</p>
-<p class="impression">初めての Pull Request。 2015/11/10</p>
-<p class="impression">とても勉強になります。</p>
-<p class="impression">GitHubを導入して継続的に改善される開発チームを作りたい。</p>
-<p class="impression">変更１</p>
-<p class="impression">test of pull req.</p>
-<p class="impression">はじめてのぷるりく.....</p>
-<p class="impression">楽しいよー</p>
-<p class="impression">まさに実践入門、とった内容でした。</p>
-<p class="impression">Git、Githubの使い方が体系的に学べ、大変勉強になりました。</p>
-<p class="impression">これからGithubがしっかり使えるように頑張ります！</p>
-<p class="impression">とても読みやすく、分かりやすいです(^^) 2015/08/17</p>
-<p class="impression">ありがとうございます！</p>
-<p class="impression">( ´ⅴ｀)大塚さんに感謝ですね。 </p>
-<p class="impression">COOOOOOOOOOOOOOOOOOOL!!!</p>
-<p class="impression">初めてのプルリク</p>
-<p class="impression">実際にプルリクエストできて勉強になります！ありがとうございます</p>
-<p class="impression">とてもわかりやすいです。ありがとうございます。</p>
-<p class="impression">勉強中...</p>
-<p class="impression">とてもわかりやすくて、楽しく勉強できてます。</p>
-<p class="impression">Hello GitHubBook！</p>
-<p class="impression">Git 楽しいやん！KazTera</p>
-<p class="impression">Hello pull request! (Me3)</p>
-<p class="impression">ぷるりくえすとおおおおおおお！15/8/5</p>
-<p class="impression">楽しくpull requestを勉強してます！</p>
-<p class="impression">わかりやすいです！</p>
-<p class="impression">ありがとうございます</p>
-<p class="impression">プルリクエストができる場を提供してくれてありがとうございます！</p>
-<p class="impression">練習中。　2015年7月13日</p>
-<p class="impression">非常に分かり易いです。参考になりました！</p>
-<p class="impression">First PR [2015/07/12]</p>
-<p class="impression">やっと辿り着きましたー(@tarooosan)</p>
-<p class="impression">もう一度復習しています。</p>
-<p class="impression">ぷるりん</p>
-<p class="impression">初プルリク[2015-06-29]</p>
-<p class="impression">初めて使います。なるほど、そういうことか。。。</p>
-<p class="impression">もう一度復習がてらやってみました。</p>
-<p class="impression">実際に操作して読み進められるので良かったです。</p>
-<p class="impression">なるほど、これは便利です。ありがとうございます！</p>
-<p class="impression">わかりやすいです。ありがとうございます。</p>
-<p class="impression">プル、プル、プルリクエスト。プルプルプルプルプルリクエスト</p>
-<p class="impression">実際に練習できるので、安心です！</p>
-<p class="impression">first pull request. とてもわかりやすかったです！</p>
-<p class="impression">いつも楽しく読んでいます！</p>
-<p class="impression">説明が分かりやすかったです！ありがとうございました！！2015-06-04</p>
-<p class="impression">手を動かしながらできるのが良かったです！</p>
-<p class="impression">tutorial形式で学習しやすかったです</p>
-<p class="impression">文章を読んでいるだけでは分かりにくいですが、実際に行ってみると分かりやすいです。助かります！</p>
-<p class="impression">初めてPullRequestに挑戦できて良かったです。</p>
-<p class="impression">初めてのプルリ2015/05/20</p>
-<p class="impression">まだまだひよっこですが、少しずつ勉強していきます。</p>
-<p class="impression">手を動かしながらだと理解を深めやすいです。良書をありがとうございます。</p>
-<p class="impression">Nice :)</p>
-<p class="impression">動作を確認しながら読み進めると、理解が深まりますね！(<a href="https://github.com/KenichiSuda">KenichiSuda</a>)2015/05/01</p>
-<p class="impression">わかりやすかったです。これからGitを使っていきたいです。</p>
-<p class="impression">初プルリクエスト</p>
-<p class="impression">コントリビュートしている感じで嬉しいです！</p>
-<p class="impression">ぷるり楽しいです＞＜(<a href="https://github.com/kawasakikou">@kawasakikou</a>)</p>
-<p class="impression">はじめてのpullrequestさせていただきました！</p>
-<p class="impression">GITの操作も覚束ない初心者ですが、実践的で解りやすいのでずいぶん理解が進みました。有難うございます。</p>
-<p class="impression">実際に手を使って実践できるのはとても有り難いです。お陰でようやく Pull Request を理解出来たような気がします。</p>
-<p class="impression">初Pull Request。とても参考になります</p>
-<p class="impression">実践的で分かりやすいです。 実務で活かす事が出来ました、ありがとうございます。</p>
-<p class="impression">仕事でSVNからGITへ移行したのでこちらの本を参考にさせていただきます！</p>
-<p class="impression">My First Pull Request (@surfhacker)</p>
-<p class="impression">チーム開発の参考にさせていただきます。</p>
-<p class="impression">First PR</p>
-<p class="impression">初めてのPR!!!(@ivezuki)</p>
-<p class="impression">初pr!</p>
-<p class="impression">Hello , pull request. 図が多く非常にわかりやすかったです. @ShuzoN 2015-3-11 </p>
-<p class="impression">この本を繰り返し読み返してGitHubを使いこなせるように頑張ります！</p>
-<p class="impression">初プル</p>
-<p class="impression">Pull Request Test...</p>
-<p class="impression">Good!</p>
-<p class="impression">great</p>
-<p class="impression">初めてのぷるり。2015-03-10</p>
-<p class="impression">丁寧な内容でとても参考になります。ありがとうございます。</p>
-<p class="impression">わかりやすいです。自分のリポジトリからpull requestされるようになりたいです。@nishidashib </p>
-<p class="impression">初プルリクです！ </p>
-<p class="impression">Hello! Pull Request!!</p>
-<p class="impression">gitについて、わかりやすく書かれて有難いです。 </p>
-<p class="impression">実践的でとてもわかりやすいです！ </p>
-<p class="impression">Pull Request ｷﾀ━(ﾟ∀ﾟ)━!! </p>
-<p class="impression">仕事でプルリク多用するようなのでしっかり練習します</p>
-<p class="impression">開発の流れにそった操作方法でわかりやすかったです！</p>
-<p class="impression">実際に手を動かしながら学べる所が最高です！ </p>
-<p class="impression">お試しサイトの存在、ありがたいです。</p>
-<p class="impression">pull requestに挑戦です。</p>
-<p class="impression">こういう試みはありがたいし、面白いですね </p>
-<p class="impression">初めての Pull Request </p>
-<p class="impression">GitHubを理解することでGitをよく理解できました。</p>
-<p class="impression">GitHub マジ面白いっす！</p>
-<p class="impression">saikou!</p>
-<p class="impression">実践的でわかりやすいです。非常に助かります！</p>
-<p class="impression">GitHub is great.</p>
-<p class="impression">正月休み中に読んでいました。今年の目標はgit/Githubを使いこなせるようになることです。</p>
-<p class="impression">あけましておめでとうございます。pull requestの練習ができる機会は少なく助かります。</p>
-<p class="impression">年末駆け込みPull Request</p>
-<p class="impression">とても有益でした。</p>
-<p class="impression">Pull Request勉強中です</p>
-<p class="impression">very useful</p>
-<p class="impression">pull requestがよくわかっていなかったのでとても良い経験が得られました</p>
-<p class="impression">実践的で素晴らしいです。</p>
-<p class="impression">GitHub勉強中です！</p>
-<p class="impression">初めてのPull Requestです。ドキドキ。</p>
-<p class="impression">チームでGitHubを利用することになったので活用させて頂いています。</p>
-<p class="impression">いつも楽しく読んでいます。(@FIROCASTER)</p>
-<p class="impression">GitHub 便利ですね。とても理解しやすい本です。(@taketonigeuma)</p>
-<p class="impression">実際に試すことで、理解が深まります。</p>
-<p class="impression">とても素敵な本です。勉強がんばりまっす！！</p>
-<p class="impression">実際にPull Requestできるところがとてもいいです。</p>
-<p class="impression">書籍もわかりやすく、実際にgithubで体験できるのも面白いです。</p>
-<p class="impression">着実に勉強中。（@whim0321）</p>
-<p class="impression">実際に操作できるのがありがたいと思います。</p>
-<p class="impression">勉強になりました。ありがとうございます。</p>
-<p class="impression">手を動かして学べて、とても良かったです。</p>
-<p class="impression">すばらしい試みですね。他の本も見習って欲しいです。</p>
-<p class="impression">勉強になります。仕事に活用します。</p>
-<p class="impression">素敵な書籍ありがとうございます。実際に試すことができ勉強になります！(<a href="https://github.com/orgimoto">@orgimoto</a>)</p>
-<p class="impression">勉強になります。git、もっと使いこなせるようになりたいな。</p>
-<p class="impression">独学で学んでいるのでこうした環境を用意していただけているのはとても助かります。</p>
-<p class="impression">初Pull Request!</p>
-<p class="impression">いかしてる本です。参考になります。</p>
-<p class="impression">とてもわかりやすく、素晴らしいです！</p>
-<p class="impression">日本のGitおよびGitHubの普及にかなり寄与していると思います。最高の書籍ありがとうございます。(@hamako9999)</p>
-<p class="impression">大変わかりやすい書籍でした。ありがとうございます。(@dadadadone)</p>
-<p class="impression">初めてのPull Requestです。この本でPull Requestに至るまでの一連の流れがとても良くわかりました。ありがとうございました！(<a href="https://github.com/pione30">@pione30</a>)</p>
-<p class="impression">まさに直接GitHubを触りながら勉強できる。本を読んだだけではなかなか分かりづらいのもこれなら覚えが早い！(@peibabo)</p>
-<p class="impression">実際に利用しながら行うので、非常にわかりやすいです。ありがとうございます。(@fagai)</p>
-<p class="impression">GitHubを実際に触りながら勉強できるため大変助かっております。(@yamasaki-chachi)</p>
-<p class="impression">Gitの使い方に関してもいい復習になった。初めてGithubを触ったが開発管理に使えるメニューが豊富なことに驚いた(@inakeen)</p>
-<p class="impression">GitHubの文化に少しずつでも慣れていければいいなと思います。2014/08/22(@yokomee)</p>
-<p class="impression">なるほど，Pull Requestのやり方がよく分かりました！</p>
-<p class="impression">First Pull request. Thank you.</p>
-<p class="impression">気軽に Pull Request を練習する機会を与えてくださりありがとうございます。素晴らしいアイデアだと思います。(@ekatiron)</p>
-<p class="impression">素晴らしい、参考になった！(@ykHakata)</p>
-<p class="impression">この本からさらに開発のスキルを高め、技術力を高めたいと思います</p>
-<p class="impression">この本をきっかけに、オープンソースの世界にもっと深く関わっていきたいです</p>
-<p class="impression">考え方、使い方両方がバランスよく理解できてよかったです。ありがとうございます。</p>
-<p class="impression">この本に出会えて良かったです。(@komainukunn)</p>
-<p class="impression">勉強になりますd</p>
-<p class="impression">書籍までインターネットと融合する時代なんですね。</p>
-<p class="impression">大学研究室の輪講でこの本を使っています。</p>
-<p class="impression">これからこの本でGitHubを有効に使えるように成長したいと思います。。</p>
-<p class="impression">実際に手を動かせる場所を用意して頂きありがとうございます</p>
-<p class="impression">実際に手を動かすため、とてもわかりやすいです。</p>
-<p class="impression">とてもわかりやすく、勉強になります。</p>
-<p class="impression">いつも楽しく読ませてもらってます。(@sa39ua)</p>
-<p class="impression">初PullRequestです。実際に手を動かしながら学べるので分かりやすいです。 </p>
-<p class="impression">初めてのPullRequestです。これから色々なプロジェクトに参加していきたいっす！</p>
-<p class="impression">個人でしか使ったことがなかったので、これを機会にチームでも使用しようと思っています。</p>
-<p class="impression">GitHubは便利そうだけど、難しそう……という思いを断ち切れました。友達と一緒に勉強しています。</p>
-<p class="impression">GitHub勉強中。仕事でもプライベートでも使えるようになりたい。</p>
-<p class="impression">実際に手を動かしながら学べるのでわかりやすいです</p>
-<p class="impression">勉強になりました！</p>
-<p class="impression">初めてのPullRequestです。個人でGitHubを使いたくて購入しました。分かりやすい解説で大変勉強になりました。</p>
-<p class="impression">会社でSubversionからGitHubへ移行するために買いました。わかりやすくて助かります！</p>
-<p class="impression">とても分かりやすい本で助かります。ありがとうございました。(@takafumir)</p>
-<p class="impression">GitHubについて、Webの記事では断片的な知識しか得られず理解が不足していましたが、本書を通して知識を身につける事ができました。ありがとうございます。</p>
-<p class="impression">SubversionからGitHubへ脱皮中！</p>
-<p class="impression">わかりやすくてとってもいいね！</p>
-<p class="impression">とてもわかりやすく、大変勉強になりました。</p>
-<p class="impression">使いながら学べます。GitHub始めるならこの本ですね！（@waterlow）</p>
-<p class="impression">素晴らしい本をありがとうございます（@knj）</p>
-<p class="impression">GitHubの記事を読んだだけでは分からないことも多く、実践できるこの入門書は本当にすばらしいです。(@kazusa7)</p>
-<p class="impression">Pull Requestをコミュニケーションの場として使って行きたいです。BY KZ</p>
-<p class="impression">この本のおかげで、今まで躊躇していたGitHubの世界に入れました。<br />みんなで感想をPull Requestしていくこの試みも素晴らしい！(@hyugavirus)</p>
-<p class="impression">とてもわかりやすい本でした！(@onot)</p>
-<p class="impression">実践できたと思います。(@japankojika)</p>
-<p class="impression">ありそうでなかったGithub入門書。実践的に勉強できるのさくさく進められました。(@Syamusuke)</p>
-<p class="impression">勉強してます。</p>
-<p class="impression">非常にわかりやすかったです。</p>
-<p class="impression">こんなに実践的な本は初めてです。ありがとうございました。(@jumperson)</p>
-<p class="impression">実践できるの、素敵です。…(@yayoc)</p>
-<p class="impression">実際にやってみるのがｽｰｯと効いて…これはありがたい…(@5ensi61e)</p>
-<p class="impression">試しながらできるので楽しく理解できます。(@spagetty)</p>
-<p class="impression">とても良いです(@iperant)</p>
-<p class="impression">今まで漠然と使っていましたが、知らなかった機能があり参考になりました。(@drmaruyama)</p>
-<p class="impression">説明が丁寧でとても理解しやすいです。同僚にも勧めたいと思います!(@nkkn1008)</p>
-<p class="impression">実践的でとても理解しやすいです。ありがとうございます。(@riverk2)</p>
-<p class="impression">初のPull Requestです、手を動かして”実践”出来るのはいいですね。(@anohito)</p>
-<p class="impression">初めてのプルリクエストを体験できました。ありがとうございました！(@fortkle)</p>
-<p class="impression">だんだんと使い方が分かってきました。ここまで挫けずできています。(@maria-satb)</p>
-<p class="impression">実践できたのがとても良かったです。ありがとうございます。(@takoji3)</p>
-<p class="impression">この本のおかげで、大学の単位が取れそうです！感謝！@kenpo</p>
-<p class="impression">なんとなくで使っていたGitHubが身近に感じられるようになりました。ただ本を読むだけでなく、実践できる立体感が新鮮で楽しいです。(<a href="https://github.com/regu">@regu</a>)</p>
-<p class="impression">いいね！ 2014/04/06</p>
-<p class="impression">とても丁寧な解説もさることながら、実際に手を動かして学習出来るのでとても理解しやすいです！(@sivukai) 2014/3/30</p>
-<p class="impression">とても役に立ちました！(@HIROCASTER)</p>
-<p class="impression">実際にプルリクエストを送ってみるという学習法は面白いですね！(@maeharin)</p>
-<p class="impression">GOOOOOOOOOOD!!!(@masaka)</p>
-<p class="impression">分かりやすく勉強になりました。現場でも利用してみます。</p>
-<p class="impression">今後はGithubを積極的に活用していこうと思います(@hidetzu)</p>
-<p class="impression">わかりやすいです！(@mkaw)</p>
-<p class="impression">git/GitHub について今知りたいこと, 興味を持っていたことが網羅され分かりやすく解説されていてとても勉強になりました！！(@sqrtxx)</p>
-<p class="impression">感想書きました。ありがとうございます。<a href="http://d.hatena.ne.jp/hyoshiok/20140322/p1">GitHub実践入門を読んでGitとかGitHubについて考えた</a>(@hyoshiok)</p>
-<p class="impression">感想だとPR出しやすいですね。(<a href="https://github.com/masutaka">@masutaka</a>)</p>
-<p class="impression">素晴らしい from 徳島</p>
-<p class="impression">キーボードショートカット等の細かいtipsの紹介も便利だった (<a href="https://twitter.com/ainame">@ainame</a>)</p>
-<p class="impression">解説がとても丁寧で分かり易いです。(<a href="https://twitter.com/ssmylh">@ssmylh</a>)</p>
-<p class="impression">6章と7章のpull requestの送り方、取り込み方が実践的でいいですね。(@wyukawa)</p>
-<p class="impression">わかりやすい！実際に手を動かしながらやると理解が深まりますね。</p>
-<p class="impression">本書のおかげで、GitHub のモヤモヤが晴れました。それにしても、この実践的な PR 体験いいですね。（@autumngoodluck）</p>
-<p class="impression">pull request を実践できるのは面白いですね (@YAMASHITAHiroki)</p>
-<p class="impression">これをテキストに社内に広めたいと思います。 @ken200</p>
-<p class="impression">本書を読めたことで、よりGithubを便利に扱えそうです。感謝です。(<a href="https://github.com/keitarou">@keitarou</a>)</p>
-<p class="impression">キーボードショートカットをもっと積極的に使いたいと思いました！ (<a href="https://twitter.com/fakestarbaby">@fakestarbaby</a>)</p>
-<p class="impression">OSSへPRを送るのに参考となる知識がまとまって得られると感じています。 (<a href="https://twitter.com/WoodCoreWood">@WoodCoreWood</a>)</p>
-<p class="impression">PRを気軽に体験できるのは素晴らしいです(<a href="https://github.com/ikdysfm">@ikdysfm</a>)</p>
-<p class="impression">Pull Requestを送ることへの敷居が低くなりました。</p>
-<p class="impression">「実際にPull Requestを送ってみる書籍」というのは斬新です。感銘を受けました。(<a href="https://github.com/axross">@axross</a>)</p>
-<p class="impression">未利用でしたが導入～PRまで、「実践」しながら「入門」できている感があります。良書をありがとうございます！(@kinops)</p>
-<p class="impression">この本のおかげで現場にGitHubが導入されました！ありがとうございます！(@warashina)</p>
-<p class="impression">素晴らしい体験をさせていただき、ありがとうございます。(@kouh)</p>
-<p class="impression">こういう本を待ってました！（@kshi6609）</p>
-<p class="impression">今まで何となーくgithubを覗いていたのですが、あまり機能を理解できてませんでした。この本のおかげでちゃんとgithubを使い始めることが出来そうです。ありがとうございます！(<a href="https://github.com/manuluu">@manuluu</a>)</p>
-<p class="impression">GitHubを学ぶには何が必要か情報が整理されていて買って良かったです。教科書として活用していきたいと思います。(<a href="https://twitter.com/skit_n">@skit_n</a>)</p>
-<p class="impression">基本的なgitの使い方から説明してあって、理解が深まりました。今話題のPullRequestについて、手順をおって説明してあるので、これからOSSに関わろうとする人によっては必須本になるのではないでしょうか。(@wolfmasa)</p>
-<p class="impression">とてもわかりやすいです、周りに広めてみようと思います！(<a href="https://github.com/cohalz">@cohalz</a>)</p>
-<p class="impression">Pull Requestに対する漠然とした不安がなくなりました。手を動かすのが一番ですね。(@yukihir0)</p>
-<p class="impression">GitHubにアカウントを作成したのは、ずいぶん前ですが、情報系の企業で働いている訳でもなく、自分の周りにも使っている人がいないので、gitもGitHubもなかなか感覚をつかめずにいました。Pull Requestという言葉も聞いたことはありましたが、実際、自分が今まさにやろうとしているとは夢のようです。これも本書の出会いのお陰だと感謝してます！(<a href="https://twitter.com/maehrm">@maehrm</a>)</p>
-<p class="impression">基礎から学ぶには適している書籍だと感じました。prを送る仕組みも面白いと思います。(<a href="https://twitter.com/diskogs">@diskogs</a>)</p>
-<p class="impression">はじめてのPull Requestです。ようやくですがGitHubについて理解することが出来たと思います。出版して頂きありがとうございました！(@Twinuma)</p>
-<p class="impression">GitHub Enterpriseを現場で使いたくなりました。あとPull Requestで特設ページに感想を書き込むってアイデアは良いですね。(<a href="https://twitter.com/tomute">@tomute</a>)</p>
-<p class="impression">なるほど！わかりやすいです。ありがとうございます。(@blowbend-jp)</p>
-<p class="impression">日常的にGithubを使っていても初めて知る内容が結構あって参考になりました！ (@sue445)</p>
-<p class="impression">最初の一歩を後押ししてくださってありがとうございます。(@nsambo)</p>
-<p class="impression">実際に手を動かして学べる素晴らしい書籍だと思います。初Pull Requestも体験できて嬉しいです。(<a href="https://twitter.com/lancork">@lancork</a>)</p>
-<p class="impression">参考になります、勉強になります。(<a href="https://github.com/shokoshi">@shokoshi</a>)</p>
-<p class="impression">pull request用のサイトを作っていただけたのはとてもありがたいです。勉強になります。(<a href="https://github.com/moririring">@moririring</a>)</p>
-<p class="impression">今までPull Requestを送る事に抵抗がありましたが、この本と練習のおかげで抵抗がなくなりました！ありがとうございます！(<a href="https://github.com/kouki-dan">@kouki-dan</a>)</p>
-<p class="impression">実際に手を動かしながら学んでいるところですが、GitHubへの見えない抵抗感がやわらいできています。(@msya3)</p>
-<p class="impression">基本的な操作方法から実際にPull Requestを行うところまで解説されていて大変参考になりました。</p>
-<p class="impression">very good!</p>
-<p class="impression">半日で半分読めました。すらすら進むので楽しいです</p>
-<p class="impression">非常にわかりやすく、自分が使い切れていない機能が明確になりました。いつか業務でも...(@fukuiretu)</p>
-<p class="impression">実践の名の通り、実際に動かして理解できてとても参考になりました。こういう書籍がもっと増えるといいなぁ。(<a href="https://github.com/abachibi">@abachibi</a>)</p>
-<p class="impression">実際に手を動かすことで、PullRequestのやり方を学ぶことができてとても勉強になります！(@tomigungun)</p>
-<p class="impression">これからGitHubをどんどん使っていきたいという気持ちになりました。(@smile-0yen)</p>
-<p class="impression">テンポ良く学べて楽しいです。GitHubにチャレンジするきっかけを与えてくださって感謝します。(<a href="https://github.com/taksato">@taksato</a>)</p>
-<p class="impression">PRについてよくわかりました。(<a href="https://github.com/kuron99">@kuron99</a>)</p>
-<p class="impression">書籍購入時点ではGit知識ゼロだったのですが、この本のおかげで大分理解を進めることができました。ありがとうございました！(@KenjiI)</p>
-<p class="impression">とても勉強になりました。これからもっと積極的にGitHubを利用したいと思います。(@hiro1270jpn)</p>
-<p class="impression">Pull Request用のリポジトリを作って頂けたのがとても良かったです。さっそくプルリク送らせて頂きます(<a href="https://github.com/koogawa">@koogawa</a>)</p>
-<p class="impression">実際にPull Requestを送ってみることができるなんて、素敵です！ (<a href="https://github.com/satoyos">@yoshipa100</a>)</p>
-<p class="impression">手を動かしながらなので、理解が深まりやすかったです(<a href="https://github.com/tq-jappy">@tq-jappy</a>)</p>
-<p class="impression">手を動かして実践でき素晴らしいと思います。ありがとうございます。(<a href="//github.com/sugarshin" target="_blank">@sugarshin</a>)</p>
-<p class="impression">pull request用のサイトを作っていただけたのはとても勉強になります！(@threecourse)</p>
-<p class="impression">わかりやすく以前よりも深く理解できました。今後活用していきたいと思います。(<a href="https://github.com/pixyzehn" target="_blank">@pixyzehn</a>)</p>
-<p class="impression">実践的で解りやすいです。プルリク送らせて頂きます。</p>
-<p class="impression">丁寧な解説で非常に分かりやすかったです。特に第９章「GitHubを利用した開発フロー」はチームで開発する上で参考になります。ありがとうございます！(@yonet77)</p>
-<p class="impression">本読みました。大変参考になりました。ありがとうございました。koyama</p>
-<p class="impression">実践的で、とても参考になりました。自分から自分へのプルリクが、ナルホドと思いました。(@exabugs)</p>
-<p class="impression">とても分かりやすかったです！早速、ソーシャルコーディングを始めたいと思います。<a href="https://github.com/kenji-takemoto" target="_blank">@kenji-takemoto</a></p>
-<p class="impression">手を動かすことで理解が深まります！(@ottijp)</p>
-<p class="impression">お勉強中ですが分かりやすいです。6章の写経中でプルリク送ります～(@makopi23)</p>
-<p class="impression">実際にプルリクを飛ばしながら勉強できるなんて、素晴らしい本ですね。(@hnagaya)</p>
-<p class="impression">実践できるのがとてもうれしい(@boheanimato)</p>
-<p class="impression">はじめてgithubに触ったのですが、とてもわかりやすく重宝しております</p>
-<p class="impression">参考になります！ありがとうございます。</p>
-<p class="impression">書籍を片手にterminalを叩くのは、楽しい時間です。</p>
-<p class="impression">この本ができてくれて本当に良かった。(<a href="https://github.com/isuke" target="_blank">@isuke</a>)</p>
-<p class="impression">私にも出来ました！ありがとうございます。</p>
-<p class="impression">Pull Request学習の場を設定していただき、ありがとうございます。とても勉強になります。</p>
-<p class="impression">入門書としてはまずまずの感じです</p>
-<p class="impression">とてもわかりやすいです！</p>
-<p class="impression">会社で購入し、Github導入に向けて参考にさせてもらっています!(@bazarak)</p>
-<p class="impression">はじめての挑戦中です。</p>
-<p class="impression">実践の場所があって分かりやすいです！ありがとうございます。(@childbamboo)</p>
-<p class="impression">買ってよかった！</p>
-<p class="impression">とても参考になります</p>
-<p class="impression">本だけではなくて、実際に使ってみる仕組みを準備しているのが良かったです。</p>
-<p class="impression">実際に試してみる環境が用意されてるのが素晴らしい。</p>
-<p class="impression">とても読みやすく、重宝してます！(@dora56)</p>
-<p class="impression">職場ではVisual Source Safeばかりなので実践できてうれしいです</p>
-<p class="impression">Pull Requestを試せる環境まで提供してくれているのが素晴らしいです。買ってよかった。(@saitoryc)</p>
-<p class="impression">プル！ぷる！りくえすと(@joy-git)</p>
-<p class="impression">初めてのpull request(@onigumagawaranomaru)</p>
-<p class="impression">わかりやすいです。ありがとうございます。</p>
-<p class="impression">とてもわかりやすいです。</p>
-<p class="impression">機能の解説が体系的でわかりやすく、今後に生かせそうです。欲を言えば電子書籍版ほしかったです。(@ushiushix)</p>
-<p class="impression">わかりやすいです!!</p>
-<p class="impression">Hello GitHub!!</p>
-<p class="impression">楽しいです</p>
-<p class="impression">初めてのプルリクエスト、ドキドキ・・・。 説明を読みながらスムーズに操作できました！(<a href="https://github.com/oimohime">@oimohime</a>)</p>
-<p class="impression">手を動かしながらでわかりやすいです。(@fipofipo)</p>
-<p class="impression">実際にPull Requestを送れるのがとても良いです。</p>
-<p class="impression">git勉強中。</p>
-<p class="impression">GitHubへの入り口を作ってくれたのが、この本でした。ありがとうございます。</p>
-<p class="impression">Pull Request を試せるのが嬉しいですね。まさに実践入門！(@skybluefactory)</p>
-<p class="impression">良書です。Gitを鋭意勉強中!</p>
-<p class="impression">分かりやすい。Pull Request実践！</p>
-<p class="impression">非常に分かりやすかったです。Travis CIやCoverallsも紹介されていて、参考になりました。(<a href="https://github.com/k-enomoto">@k-enomoto</a>)</p>
-<p class="impression">git本体のハンズオンとプルリク体験、両方できてお得です。Way of GitHubって感じですね。(@katsumitk)</p>
-<p class="impression">星 5つ!! ★★★★★ </p>
-<p class="impression">Pull Request</p>
-<p class="impression">学習と実戦ができる良書です。takaboo</p>
-<p class="impression">TechLunchで練習中です！</p>
-<p class="impression">手を動かしながらGitHubについて詳しく学べるので、飽きずに学習できます。(<a href="https://github.com/0tofu">@0tofu</a>)</p>
-<p class="impression">わかりやすかったです。良い本！(@fumobox)</p>
-<p class="impression">このようなインタラクティブな試みもgithubがあるからこそですね！実感出来ました(<a href="https://github.com/kyokoshima">@kyokoshima</a>)</p>
-<p class="impression">Pull Requestを実際に体験して学べるのはとてもありがたいです。(<a href="https://github.com/yuichigoto">@yuichigoto</a>)</p>
-<p class="impression">これまで難しいと思って手を出せていなかったGitとGitHubの凄さが身にしみました。素晴らしい本です。(<a href="https://github.com/AtsushiSakai">@AtsushiSakai</a>)</p>
-<p class="impression">GitHubが身近になりました！(@yoshixmk)</p>
-<p class="impression">Niceです！最近、技術評論社さんは良い仕事してますね！(<a href="https://github.com/digitero">@digitero</a>)</p>
-<p class="impression">本当にわかりやすくて、素晴らしい本でした。ありがとうございました。(<a href="https://github.com/sho322" target="_blank">@sho322</a>)</p>
-<p class="impression">今まで何となく利用してましたが、やっとすっきりしました！(<a href="https://github.com/seteoceano">@seteoceano</a></p>
-<p class="impression">My first Pull Request :) (<a href="https://github.com/epokishi">@epokishi</a>) </p>
-<p class="impression">練習させてくれてありがとうございまーす（<a href="https://github.com/yuma25689">@yuma25689</a>）</p>
-<p class="impression">勉強中です！</p>
-<p class="impression">がんばる！</p>
-<p class="impression">これでWEBエンジニアを目指せそうです。(tmak1000)</p>
-<p class="impression">はじめてのプルリク</p>
-<p class="impression">It's very helpful, thank you!</p>
-<p class="impression">体験ができるのはとても助かりました。（<a href="https://github.com/futabooo">@futabooo</a>）</p>
-<p class="impression">この本のお陰で、私もこれからGit/GitHubを使い始めていくことが出来そうです。(@hasegawatakac)</p>
-<p class="impression">初めての Pull Request です。実際に試してみることができるのがいいですね。</p>
-<p class="impression">本を読むだけじゃなく、手を動かして体験できるというのは素晴らしい</p>
-<p class="impression">第6章プルリク実践！ここまで一気に読み切ることができました。読みやすく、進めやすかったです！</p>
-<p class="impression">GitHubの使い方がいまいちもやっとしていたところを本書を通じて解消できました。</p>
-<p class="impression">GitとGitHub勉強中。Pull Requestを実際に送る経験はありがたいです。第６章以降もワクワクしながら読みたいです。<a href="https://github.com/fujifuji3284" target="_blank">（@fujifuji3284）</a></p>
-<p class="impression">My First Pull Request ! Thanks for your book !</p>
-<p class="impression">感想書かせていただきました→<a href="http://satomikko94.hatenablog.com/entry/2014/07/10/233111" target="_blank">★</a>　github利用方法だけでなく活用方法に触れてたのが良かったです。特に9章の開発フローのところはすごく参考になりました！(@satomikko94)</p>
-<p class="impression">読むだけでなく実践することもできて、とても勉強になります。</p>
-<p class="impression">初めてのPR。楽しく読んでいます！(@otomarukanta)</p>
-<p class="impression">実際にPRを送って感想を受け取るのって、面白い試みだと思いました！</p>
-<p class="impression">とても参考になりました！</p>
-<p class="impression">第6章より初めてのPull Request! わかりやすくて実践的な本だと思います。</p>
-<p class="impression"><b>勉強になります。</b>ありがとうございます。(@yujihamaguchi)</p>
-<p class="impression"><b>勉強になります。</b></p>
-<p class="impression"><b>Hello!World!</b></p>
-<p class="impression">第6章 初めてのPull Request練習です</p>
-<p class="impression">勉強になります!</p>
-<p class="impression">第6章 初めてのPull Request練習です 2014/07/30</p>
-<p class="impression">会社ではAtlassian Stashなので、GitHubでは初PullRequest!</p>
-<p class="impression">わかりやすい本でした！</p>
-<p class="impression">とてもわかりやすい本でした！</p>
-<p class="impression">大変わかりやすい本だと思います．ありがとうございます．</p>
-<p class="impression">改めてGitの復習とGitHubの勉強中です。とても参考になります。</p>
-<p class="impression">初めてのPull Request練習です </p>
-<p class="impression">PR 練習します </p>
-<p class="impression">初Pull Requestです．とても分かりやすい本で，GitとGithubが理解しやすかったです．</p>
-<p class="impression">実践的に学ぶことができ、大変勉強になります。</p>
-<p class="impression">とても勉強になります。タイトル通りの実践入門書だと思います。</p>
-<p class="impression">いつも楽しく読んでます。</p>
-<p class="impression">Githubの勉強をはじめました。よい参考書に巡り会えた私は幸せ者です。2015.08.10 </p>
-<p class="impression">もっと勉強します。</p>
-<p class="impression">スラスラ読めてしまった PR関係が練習できてうれしいです 2014/08/03(<a href="https://github.com/occar421">@occar421</a>)</p>
-<p class="impression">実践的でとても勉強になりました。 2014/8/19 (<a href="https://github.com/ak1t0">@ak1t0</a>)</p>
-<p class="impression">説明がとても分かりやすいです。PR後に追加した文字列</p>
-<p class="impression">わかりやすくて非常に良い本です。2014/08/16(<a href="https://github.com/kanpou0108" target="_blank">@kanpou0108</a>)</p>
-<p class="impression">my first PR. very easy.</p>
-<p class="impression">実際に手を動かし、Pull Requestを試せるので良いです。2014/08/23</p>
-<p class="impression">初Pull Requestしてみました。実際に自分の手で実践できるので、非常に参考になりました。このような試みに感謝します。</p>
-<p class="impression">はじめてのPull Request。とても楽しい試みです。ありがとうございます。</p>
-<p class="impression">アホなおっさんでも理解できる本で助かります。Gitの入門書としても今まで読んだなかで一番わかりやすかったです。GitHubの思想とプレーモデルによって背骨が一本しっかり通っているから、「なんで、そうなるの？」と首をかしげるシーンがほとんどありません。(@kohey)</p>
-<p class="impression">Pull Requestしてみました。実践で手を動かせるのではかどります！2014/9/3</p>
-<p class="impression">とても勉強になります。</p>
-<p class="impression">プルリク試せるのは非常にありがたいです！</p>
-<p class="impression">はじめてのpull request</p>
-<p class="impression">初心者にもとても易しいです。</p>
-<p class="impression">2014.9.3 はじめてのPull Request。</p>
-<p class="impression">書籍とwebサービスが一体となっているのは初めての体験です。</p>
-<p class="impression">実際に手を動かして確認できますので、自信がつきました。</p>
-<p class="impression">他の本にくらべてストーリーがあり、とても読みやすく身になりました。</p>
-<p class="impression">はじめてのPull Request ny </p>
-<p class="impression">githubってすごいです。</p>
-<p class="impression">わかりやすい。(@murapon)</p>
-<p class="impression">プルリクは初心者にはハードルが高いのでこういったデモがあるのは嬉しいです。(@fixx_man)</p>
-<p class="impression">githubの各機能が詳しく網羅されており、大変分り易い本です。プルリクを試せる企画も有り難いです。(<a href="https://twitter.com/tomcha_">@tomcha_</a>)</p>
-<p class="impression">プルリクできてうれしい！(@ryosuketter)</p>
-<p class="impression">実践的でとてもわかりやすかったです。</p>
-<p class="impression">実践的な本なので面白いです。</p>
-<p class="impression">"GitHub"に焦点を絞った、とても実用的な参考書だと感じました。</p>
-<p class="impression">手を動かせる場を提供する試みはすばらしいと思います。</p>
-<p class="impression">やっとここまできました。実践でしっかり使えるかしら。</p>
-<p class="impression">githubの魅力が伝わりました！</p>
-<p class="impression">このように実際に試せるサイトがあると理解がより深まりますね！</p>
-<p class="impression">とても実践的で勉強になります。</p>
-<p class="impression">とてもわかりやすいです。</p>
-<p class="impression">大変勉強になっています！</p>
-<p class="impression">おもしろい．</p>
-<p class="impression">実践がさくっとした例でありがたいです</p>
-<p class="impression">Interesting and unique approach!</p>
-<p class="impression">面白い試みです。</p>
-<p class="impression">THE 初めてのプルリク。</p>
-<p class="impression">実際に手を動かしながら学べるのはありがたいです。</p>
-<p class="impression">手を動かして確認できるので面白い！</p>
-<p class="impression">Githubにアカウントを作ってみたものの使い方がイマイチわかってなかったのですが、この本を読むことで理解が進みました。</p>
-<p class="impression">実践してみました。</p>
-<p class="impression">全て完璧に理解できたわけではありませんが、なんとかこの章まで来ました。また読み直してみます</p>
-<p class="impression">実際にPRできるのはうれしいです</p>
-<p class="impression">お試しできるのよいですね</p>
-<p class="impression">大変わかりやすく、実践的で勉強になります。</p>
-<p class="impression">すばらしいです。</p>
-<p class="impression">勉強になります。いい本をありがとうございます！</p>
-<p class="impression">勉強になります！</p>
-<p class="impression">百聞は一見にしかず。百見は一触にしかず。</p>
-<p class="impression">手を動かすのが一番</p>
-<p class="impression">とても読みやすいです。ソーシャルコーディング、なんだかワクワクしますね</p>
-<p class="impression">わかりやすく勉強になっています。良書です。</p>
-<p class="impression">pull request練習２回目です。おねがいします。</p>
-<p class="impression">とてもわかりやすいです。</p>
-<p class="impression">学習環境を用意していただき、ありがとうございます。</p>
-<p class="impression">GitHubの導入にとても役に立ちました。ありがとうございます。</p>
-<p class="impression">単純にコマンドや機能の解説だけでなく、OSS開発の文化について学べたのが良かったと思います。(<a href="https://github.com/ak1t0">@honeniq</a>)</p>
-<p class="impression">実際に試してみれるのがありがたいです。</p>
-<p class="impression">プルリクエストについてなかなか理解できなかったのですが、実践することで多少わかってきました。</p>
-<p class="impression">本書を活用してGitHubの使い方を勉強しております。</p>
-<p class="impression">実際に試せる環境があってすごく分かりやすかったです。</p>
-<p class="impression">手を動かして、自分の理解を確認しつつ学習を進めることができました。良い本に出会えて嬉しいです！</p>
-<p class="impression">電子書籍待っていました!!!</p>
-<p class="impression">非常に勉強になります！</p>
-<p class="impression">pull requestの実践です</p>
-<p class="impression">良書です！まずは触って慣れろ！ですね。</p>
-<p class="impression">やっと第6章まできました</p>
-<p class="impression">とても参考になりました</p>
-<p class="impression">hakoeve</p>
-<p class="impression">Pull Request送信する機会を提供いただきありがとうございます！</p>
-<p class="impression">多くのことが理解できました。丁寧な本ですね。ありがとうございます。</p>
-<p class="impression">SubversionからGitへ環境を移行する事を思案中...参考のために購入させていただきました。現在勉強中。手を動かしながら確認しております。</p>
-<p class="impression">開発現場デビューの前に使わせていただきました。どうもありがとうございます。</p>
-<p class="impression">とても参考になりました。ありがとうございます。</p>
-<p class="impression">手を動かして学べる実践入門の名にふさわしい良書ですね。</p>
-<p class="impression">PR初挑戦です。</p>
-<p class="impression">このように実際にforkしてcloneしてworkブランチ作って変更をしてPullRequestして、GitHubの楽しさがわかりました！</p>
-<p class="impression">実際にやってみることで非常に勉強になりました。ありがとうございます！</p>
-<p class="impression">8月頃本を読んだだけでは良くわからなかったのですが、その後gitを勉強したところ、わかるようになりました。やはりgitを知っていることが前提ですね</p>
-<p class="impression">GitHubの勉強にとても助かりました。ありがとうございます。</p>
-<p class="impression">とっても勉強になります。この知識を生かせるように精進します。(<a href="https://github.com/momosolo">@momosolo</a>)</p>
-<p class="impression">2015/01/30 pull request</p>
-<p class="impression">プルリクを実際に手を動かして試せるのは非常に勉強になりました。ありがとうございます！</p>
-<p class="impression">GitHubとGitの理解が深められました。</p>
-<p class="impression">なるほど！</p>
-<p class="impression">表面上理解するには良い？？</p>
-<p class="impression">はじめての Pull Request !!!</p>
-<p class="impression">おもしろい！:-D</p>
-<p class="impression">Hello GitHub world!!(<a href="https://github.com/ohbarye">@ohbarye</a>)</p>
-<p class="impression">GitHubを使いこなせるようになるため、本書で勉強しています！(@tkitamoto)</p>
-<p class="impression">手を動かして試すことで、すんなりと理解できました。ありがとうございます！</p>
-<p class="impression">良い</p>
-<p class="impression">本書を参考に初めてのPull Requestを送ります。練習の機会を与えてくださりありがとうございます。</p>
-<p class="impression">今までは、Subversionを使ってましたが、これでGitに移行できそうです。</p>
-<p class="impression">githubを覚える良い機会となりました。ありがとうございます。</p>
-<p class="impression">初ＰＲ</p>
-<p class="impression">やりました</p>
-<p class="impression">何となく使っていましたが、体系的に学び直す事が出来ました。</p>
-<p class="impression">実際に手を動かしてpull requestを送れるのは素晴らしい試みと思います！</p>
-<p class="impression">初PRします。ありがとうございます！ (@aoshimanoa)</p>
-<p class="impression">My first PR!</p>
-<p class="impression">６章まで読んでブランチの使い方がよくわかりました。このまま読み進めて Pull Request の使い方も理解するつもりです。</p>
-<p class="impression">初めてのpull request(@mojyakou)</p>
-<p class="impression">初めてのRR（@techimob）！</p>
-<p class="impression">実際に手を動かして Pull Request でき、良い経験となりました ;-) </p>
-<p class="impression">Gitがわからない人でもGitHubを利用できるようになるのでいいと思います</p>
-<p class="impression">初PR!</p>
-<p class="impression">会社へのソーシャルコーディング布教活動の基盤が出来ました！</p>
-<p class="impression">実際に手を動かして学習できるのでとても理解しやすいです。ありがとうございます。(@hideo-works)</p>
-<p class="impression">WindowsでのGitインストール・初期設定から説明して頂き、だいぶ助かりました！</p>
-<p class="impression">PRはしきいが高かったので実践できるのすごく助かります！(<a href="https://github.com/nanakira">@nanakira</a>)</p>
-<p class="impression">実際に手を動かす環境を提供いただきましてありがとうございます。</p>
-<p class="impression">楽しんでます！！</p>
-<p class="impression">とても参考になります。マスターするぞ！</p>
-<p class="impression">書籍から飛び出し、実際の GitHub を使ってもらう試み、素晴らしいです！！。(@naotawool)</p>
-<p class="impression">何となく使っていたものを体系的に理解することができました。ありがとうございます！</p>
-<p class="impression">初PR！(@fakiyer)</p>
-<p class="impression">これからどんどんソーシャルコーディングしていきたい！</p>
-<p class="impression">面白いっす</p>
-<p class="impression">devsumiのプレゼン切っ掛けで買って、最近になってようやく読み始めました。面白いです！</p>
-<p class="impression">仕事でGitHubを使うので勉強してます。</p>
-<p class="impression">実際に Pull Request を試せるのがとても良いですね！手を動かしながら学習できたので大変ためになりました。</p>
-<p class="impression">ありがとうございます。手を動かして勉強するのは大切ですね。理解できていないところが浮き彫りになります。 (@HIROCASTER)</p>
-<p class="impression">とてもわかりやすい本ですね。練習用環境があることもありがたいです。</p>
-<p class="impression">結果的に買ってよかった本でした。今後も活用させていただきます。</p>
-<p class="impression">実際にPull Request可能な環境があり，自信がつく</p>
-<p class="impression">手を動かして学習できる仕組み素晴らしいですね。ありがとうございます。</p>
-<p class="impression">すばらしい本です</p>
-<p class="impression">fantastic!</p>
-<p class="impression">目指せソフトウェアエンジニア</p>
-<p class="impression">勉強になり、ありがとうございました。(@seisonshi)</p>
-<p class="impression">初めてのプルリクエスト！実際できるっていいですね！</p>
-<p class="impression">手を動かせる環境を用意して頂き、ありがとうございます。</p>
-<p class="impression">実際に手を動かして Pull Request でき、分かりやすいです。</p>
-<p class="impression">わかりやすいと思いました。しっかり読み込んでいきたいです。</p>
-<p class="impression">もう人に聞けないのでこの本は助かります♪</p>
-<p class="impression">手を動かしながら学ぶことで早く、確実に理解できたと思います。ありがとうございました。(@tomoyag)</p>
-<p class="impression">GitHubの基本が手を動かしながら楽しく学ぶことができました。ありがとうございます。</p>
-<p class="impression">「git+GitHub」手習い中。たぶんここに書き込んだ人で私が最高齢。IT業界も3世代引き継いで一人前。まだまだがんばる</p>
-<p class="impression">PullRequestを実践できるのが良い</p>
-<p class="impression">Pull Request 万歳！</p>
-<p class="impression">Pull Request 勉強中。(@to9a)</p>
-<p class="impression">Pull Request プルリクエスト！！</p>
-<p class="impression">First Pull Request</p>
-<p class="impression">実際にPull Request可能な環境があり，自信がつく</p>
-<p class="impression">手を動かしながらなので楽しく理解が進みます</p>
-<p class="impression">プルリクエストなう</p>
-<p class="impression">Pull Request がんばります</p>
-<p class="impression">Pull Request こんにちは</p>
-<p class="impression">Pull Request 这本书读着很有趣</p>
-<p class="impression">Эта книга очень хорошо! @yasufumic PRが試せるのが嬉しかったです。スキルも勇気もまだ足りないので。  </p>
-<p class="impression">★☆★☆ 2015/8時点でbranchの内容が書籍と比較して増えましたね。今回First Pull Requestの機会をいただき感謝しています。★☆★☆</p>
-<p class="impression">次のプロジェクトではぜひGitHubを使いたいです</p>
-<p class="impression">初プルリク 気軽に試すことができ、良かったです！</p>
-<p class="impression">Git&amp;Githubの勉強に大変役に立ちました！(@kimacho)</p>
-<p class="impression">ありがとうございます！</p>
-<p class="impression">この本のおかげで私にもPullRequestができました。ありがとうございます。</p>
-<p class="impression">GitHubがわかってきました(@mosugi)</p>
-<p class="impression">Pull Request Hello</p>
-<p class="impression">わかりやすかったです</p>
-<p class="impression">こんなにたくさんみなさんからのコメントが！今度オープンソースのRyuに勇気を出して機能を送ってみます。@alyosha1879</p>
-<p class="impression">実践的で大変わかり易いです。</p>
-<p class="impression">大学生です。自分の研究室にはGitHubを使う週間がないので私が布教していきます！</p>
-<p class="impression">初のPull Requestです。届いてますか！！！！()</p>
-<p class="impression">初のPull Requestです。届いてますか！！！！(追加)</p>
-<p class="impression">初のPull Requestです。届いてますか！！！！(追加その２)</p>
-<p class="impression">勉強になりました。ありがとうございました。(@shuuchen)</p>
-<p class="impression">とても勉強になる本でした。</p>
-<p class="impression">これ面白い！(@euglena1215)</p>
-<p class="impression">Pull Request 勉強になります！</p>
-<p class="impression">はじめてのぷるりく</p>
-<p class="impression">素晴らしい試みです。感謝！Git、業務でも使えるようにしたい！（使えるとは言っていない）</p>
-<p class="impression">貴重なプルリクをありがとうございます！</p>
-<p class="impression">Pull Requestテスト！ 勉強になります！^-^</p>
-<p class="impression">もう一つテスト</p>
-<p class="impression">祝 Pull Request</p>
-<p class="impression">勉強中!</p>
-<p class="impression">本書の編集を担当させていただきました。以前にPRしたのですがテスト段階で消してしまったようなので再度PRしました(<a href="https://github.com/d-ikeda">@d-ikeda</a>)</p>
-<p class="impression">NiceなBookです。</p>
-<p class="impression">べ、勉強中なんだからね！</p>
-<p class="impression">Pull Request 尝试。</p>
-<p class="impression">とても分かりやすくて参考になりました！(@ko31)</p>
-<p class="impression">こうした練習の場を提供して頂き、ありがとうございます！著者の方に感謝</p>
-<p class="impression">GitLabに慣れていたのですが、GitHubの勉強中です。はじめてのPRです。(@nwebcraft)</p>
-<p class="impression">大変わかりやすくて楽しいです☆</p>
-<p class="impression">Pull Requestの使い方がわからなかったので勉強になる</p>
-<p class="impression">Githubの勉強に大変役立っています!(@maestro_L_jp)</p>
-<p class="impression">お世話になってます。</p>
-<p class="impression">Great job.</p>
-<p class="impression"> 読みやすくて楽しく覚えられます!</p>
-<p class="impression">Great job2.</p>
-<p class="impression">GitHub studying!</p>
-<p class="impression">初めてのPull Request！！</p>
-<p class="impression">Schooを見て本を買いました！サイコーです！だけどGitHubが大幅にリニューアルされてるので、最新版よろしくです！</p>
-<p class="impression">実際に操作しながら覚えられるところがいい本だと思います。</p>
-<p class="impression">めっちゃ分かりやすい！(<a href="https://github.com/ksukejs">@ksukejs</a>)</p>
-<p class="impression">変更２＠2016-02-08</p>
-<p class="impression">初めてプルリクしてみる。</p>
-<p class="impression">First Pull Request @2016-03-14</p>
-<p class="impression">本の通りやってみたのです( ´ ▽ ` )ﾉ</p>
-<p class="impression">実際にやってみると感触つかめました!!ありがとうございます</p>
-<p class="impression">実践形式でとてもためになります。何度か繰り返してマスターを目指します！(<a href="https://github.com/noobow34">@noobow34</a>) 2016/3/21 16:40</p>
-<p class="impression">WEB+DB PRESSでもプルリクさせてもらいました。再度勉強しなおしています。 2016/3/21 20:02</p>
-<p class="impression">初めてのPull Request!!GitHubを使いこなせるよう勉強してます！</p>
-<p class="impression">しばらく積読していてすみませんでした。m(_ _)m</p>
-<p class="impression">PR TEST</p>
-<p class="impression">勉強中です！基本的なコマンド操作から画面上の機能説明まで、丁寧に書かれており理解しやすいです</p>
-<p class="impression">すごくわかりやすいです。業務に活かしたいと思います。</p>
-<p class="impression">pull request のテストです。April 19.</p>
-<p class="impression">えにくすは、ぷるぷる　りくえすとを唱えた。</p>
-<p class="impression">pull request !!</p>
-<p class="impression">Catch Up Pull Request</p>
-<p class="impression">えにくすは、ぷるぷる　りくえすとを唱えるつもりだ</p>
-<p class="impression">プルリク送れるリポジトリまで用意してもらえるとは、至れり尽くせりですね</p>
-<p class="impression">今までSVNを使っていたので新鮮です。</p>
-<p class="impression">とても丁寧に書かれていたので初めての方でも気負うことなく取り組めると思いました。</p>
-<p class="impression">演習が豊富で理解が進みます。素晴らしい本をありがとうございます。(@matzryo)</p>
-<p class="impression">実際に手を動かせるのでとてもわかりやすいです！ありがとうございます！</p>
-<p class="impression">電子書籍で出して欲しかった。</p>
-<p class="impression">はじめてPull request をテストします。ま。</p>
-<p class="impression">手を動かしながら学べるので良いと思います。</p>
-<p class="impression">初めての Pull Request です。こんな風にやるんですね。わかりやすいです。</p>
-<p class="impression"> 読みやすくいです!n</p>
-<p class="impression">外国人でも読みやすいです。</p>
-<p class="impression">pull requestのテストです。</p>
-<p class="impression">実践できるのは、かなり助かります。ありがとうございます。</p>
-<p class="impression">とってもわかりやすいです。勉強になります。(@yukihirop)</p>
-<p class="impression">遅まきながらGitHub勉強始めました</p>
-<p class="impression">ぷるりヽ(｀▽´)/</p>
-<p class="impression">pull request test</p>
-<p class="impression">This is good book.</p>
-<p class="impression">みんなのプルリク</p>
-<p class="impression">実際に触って見れるのは嬉しいです。</p>
-<p class="impression">初めてのPull Request...</p>
-<p class="impression">初めてのPull Request part2 </p>
-<p class="impression">大変参考になります！ </p>
-<p class="impression">実践できると、理解しやすいです </p>
-<p class="impression">ぷるりく</p>
-<p class="impression">流れは理解できた。使いこなすには、やっぱり実務で使って慣れるしかなさそう。(@Kei178) </p>
-<p class="impression">基礎やり直し中です。とても勉強になります </p>
-<p class="impression">ふっふっふ、初のプルリクだ。何気にうれしい </p>
-<p class="impression">明日からバンバンプルリクエストするぞ。明日からバンバンプルリクエストするぞ。明日からバンバンプルリクエストするぞ。</p>
-<p class="impression">遅れてきたプルリクエスト</p>
-<p class="impression">すごく実践的でわくわくします。早く本を開けば良かったです。</p>
-<p class="impression">プルリクエストの実演が出来て勉強になりました。</p>
-<p class="impression">My first pull request! </p>
-<p class="impression">gitとpull requestを実践して学ぶことができます。</p>
-<p class="impression">Git pull request! </p>
-<p class="impression">試す場を与えて下さり、ありがとうございます。</p>
-<p class="impression">非常にわかりやすいですし、PullRequest環境もあり、助かりました。</p>
-<p class="impression">&#10052;&#10052; Hello GitHub world! &#10052;&#10052;</p>
-<p class="impression">初めてのPull Requestです。</p>
-<p class="impression">いつも楽しく読んでいます。 (@kusati)</p>
-<p class="impression">あずにゃん「プルリクやってやるです！」</p>
-<p class="impression">興味はあるものの、使い方がわからず困っていました。この本のおかげでとても助かっています。</p>
-<p class="impression">本サイトの作成ありがとうございます! なかった場合は、ＰＲできなかったです。</p>
-<p class="impression">Pull request (-_-)b </p>
-<p class="impression">初めてのPull request </p>
-<p class="impression">非常によく出来ている本だと思います。ありがとうございます！ </p>
-<p class="impression">初めてのpull requestです、素晴らしい機会をありがとう、感謝します。 (@eternity514) </p>
-<p class="impression">これが…プルリクなのですね！めっちゃわかりやすい！</p>
-<p class="impression">初プルリクエスト。どきどき。</p>
-<p class="impression">はじめまして！こうやって実際に試せるのがとても良いです。</p>
-<p class="impression">はじめまして。プルリクのテストができ、理解が深まりとても良いです。</p>
-<p class="impression">残念ですが情報が古くなってしまいました。第5章UIの説明が現行にあいません。改訂版が必要です。</p>
-<p class="impression">プルリクエストを実践させていただき、ありがとうございます。やはり、実践に勝るものはありませんね。</p>
-<p class="impression">わかりやすくてためになりました。</p>
-<p class="impression">手を動かしながら勉強するのは楽しいです。</p>
-<p class="impression">Hello GitHub :D</p>
-<p class="impression">今更ですがgithubちゃんと使おうと思って本書を手に取りました！</p>
-<p class="impression">The New Beginner of GitHub!!</p>
-<p class="impression">実践的に学べるのでありがたいです。(<a href="https://github.com/hiromaki">@hiromaki</a>)</p>
-<p class="impression">この書籍を軸に習熟に励もうと思います。ありがとうございます。</p>
-<p class="impression">なるほど。よく分かりました。</p>
-<p class="impression">本書のおかげで敷居が高く感じていたGitHubを使いこなせそうです。</p>
-<p class="impression">Hello World!<br>
-Pull Request初体験です！まるで一つのコミュニティのように躍動している様子が納得でき、勉強になりました。本書に感謝いたします。(<a href="https://github.com/SocietalTrends">@SocietalTrends</a>)</p>
-<p class="impression">とても分かりやすいです！勉強になります。</p>
-<p class="impression">非常に勉強になりました。</p>
-<p class="impression">一部情報の古い箇所もありましたが(githubUI等)、わかりやすく学習させていただきました！</p>
-<p class="impression">初めてのプルリク。とても読みやすい書籍でした。</p>
-<p class="impression">実際にいろいろ試せて分かりやすかったです．良い本ですね．</p>
-<p class="impression">はじめてのプルリクだー。</p>
-<p class="impression">この本は、実際に手を動かして勉強できるので、とてもわかりやすいです。</p>
-<p class="impression">出来てるかな？？</p>
-<p class="impression">習うより慣れろですね！</p>
-<p class="impression">初PR!!</p>
-<p class="impression">手を動かしながら体験できるので、イメージが付きやすく楽しみながら学習できてます！</p>
-<p class="impression">わかりやすいです。もっと早く読めば良かったです。</p>
-<p class="impression">とても分かりやすいです!これからGitHubをどんどん活用していきたいと思います。</p>
-<p class="impression">引き続き勉強させていただきます。よろしくお願いいたします。</p>
-<p class="impression">初めてのPull Requestを送る</p>
-<p class="impression">このような試みすばらしいと思います。第５章にチュートリアル的な物があるとGitHubの理解がより深まりそうです。</p>
-<p class="impression"> 今まで知らなかったTipsなども学びなおすことができ、大変参考になりました。Thank you!! </p>
-<p class="impression">初めてのPull Requestです。</p>
-<p class="impression">手を動かして学べるのが良かったです。レイアウトがかなり変わったため、第5章のリニューアルを期待します。</p>
-<P class="impression">とても分かりやすかったです。</p>
-<P class="impression">Awesome!</p>
-<P class="impression">かりやすかったです。</p>
-<P class="impression">PRしてみる。</p>
-<p class="impression">ありがとうございます！！</p>
-<p class="impression">勉強になります〜</p>
-<p class="impression">色々な解説などを読んできましたが、やはり手を動かすのか一番ですね。体験の場を提供していただき本当にありがとうございます。</p>
-<p class="impression">git githubがよく理解できました</p>
-<p class="impression">早く実践で使えるようにならねば...</p>
-<p class="impression">非常にわかりやすいです</p>
-<p class="impression">本書の名の通り実践的で勉強になります。</p>
-<p class="impression">面白いです！</p>
-<p class="impression">実践しながら学べるのはいいですね</p>
-<p class="impression">人生最初のプルリクエスト！</p>
-<p class="impression">手を動かしつつ、一連の流れをつかむのにちょうどよし</p>
-<p class="impression">初めてのgit実践、手を動かしながら頑張ってます！！じゃけぇ〜</p>
-<p class="impression">体系的に学べて勉強になりました。</p>
-<p class="impression">自分のリポジトリに fork せずに直接 clone して push しようとしてハマってました…。他人のリポジトリいじれたらまずいに決まってるじゃないか…。</p>
-<p class="impression">できたーーーー</p>
-<p class="impression">めっちゃわかりやすいです！</p>
-<p class="impression">ありがとうございます。</p>
-<P class="impression">実践的でとても分かりやすい書籍だと思います。</p>
-<P class="impression">実際にPull Requestを送れる環境があるのが、すごくありがたいです。</p>
-<P class="impression">ネット上で調べながら仕事で使いましたが、やはり本で順を追って説明をしてもらえると安心して読み進められます。</p>
-<P class="impression">いつも楽しく読んでいます。</p>
-<P class="impression">日本語教材助かります。</p>
-<p class="impression">初めてのプルリクをこのように実践できて大変ありがたいです！</p>
-<p class="impression"> コードの管理が楽になりました。　</p>
-<p class="impression">現場でgithubを導入するにあたり、とても参考になりました</p>
-<p class="impression">奥が深い...</p>
-<p class="impression">It is exciting experience</p>
-<p class="impression">実際に手を動かしながらだと、覚えが早くて助かります！</p>
-<p class="impression">This book is excellent</p>
-<p class="impression">my first pull request</p>
-<p class="impression">初めてのPull Requestです。勉強になります。</p>
-<p class="impression"> My first pull request. Thank you. </p>
-<p class="impression"> Now studying.Thank you.</p>
-<p class="impression">ありがとう！Git！ありがとう！Git！</p>
-<p class="impression">今まであやふやだったことが体系的に学べてとても参考になりました。また手を動かして実践できるのも良かったです。(<a href="https://github.com/tadaken3">@tadaken3</a>)</p>
-<p class="impression">すごく勉強になります。助かります！</p>
-<p class="impression">Thank you. @noriyukinakaoka</p>
-<p class="impression">勉強になります。ありがとう。</p>
-<p class="impression">初めの一歩。０と１は大きく違う。ありがとう。</p>
-<p class="impression">ようやく時間ができて試せてます、勉強になります。</p>
-<p class="impression">毎日git触って勉強します！ありがとうございます！</p>
-<p class="impression">頑張ります！ありがとうございます！</p>
-<p class="impression">いつも楽しく読んでいます。</p>
-<p class="impression">猛勉強中</p>
-<p class="impression">Chinese in Japan sending First Pull Request with English.LOL Fin</p>
-<p class="impression">ツールの使い方を勉強するにはツールを操作しながら勉強するのが印象が深いと思います。助かります。</p>
-<p class="impression">大変勉強になりました！</p>
-<p class="impression">勉強中</p>
-<p class="impression">Git is wonderfull!!</p>
-<p class="impression">非常に参考になりました！感謝！！</p>
-<p class="impression">test</p>
-<p class="impression">頑張って勉強してます！</p>
-<p class="impression">一番下に追加すればいいのですね？Clone/add/commit/push/pull 等は一人で練習できますが、Pull Request は少々ハードルが高いので良いアイデアだと思います</p>
-<p class="impression">P131のブラウザで表示して... という部分は url の入れ方 file:// の記述があった方がよいかと思います</p>
-<p class="impression">大変勉強になっております。今後期待することは、現在の仕様に合わせた改訂です。</p>
-<p class="impression">これから開発頑張ります。</p>
-<p class="impression">20170610 菅原参上. 頑張ります</p>
-<p class="impression">GitHub 最高！</p>
-<p class="impression">20170612 Chinese student of CQUPT learn</p>
-<p class="impression">使いこなせるように頑張ります！</p>
-<p class="impression">いつも楽しく読んでいます。@ya</p>
-<p class = "impression"> 这本书读者很有趣. (@yangvipguang) </p>
-<p class ="impression">こうして実際にプルリクエストの練習をする機会を提供していただけるのは、入門書として大変素晴らしいことだと思います。ありがとうございました。</p>
-<p class="impression">わかりやすくてたすかります。@ya</p>
-<p class="impression">This book is very good. This is my first PullRequest!</p>
-<p class="impression">解説がとてもわかりやすいです。そして実践練習を積めるこの工夫・・まさにgithubのメリットを存分に活かしていますね。勉強になります。</p>
-<p class="impression">仕事で使うので試させていただきました。ありがとうございます！</p>
-<p class="impression">手軽にpull requestの練習ができます。</p>
-<p class="impression">Git・Githubの基本的な使い方や、pull requestについて分かり易く解説・実践ができる良いテキストです。このような実技向けリポジトリまで用意して頂いて、ありがとうございます。</p>
-<p class="impression">独学のため購入しました。細かい機能についてまで書いてあり大変参考になります。本書のGitHub画面と今使っているGitHubの画面が異なっている様な気がしますが、versionが変わったのでしょうか？(eclipseでgit機能を使いたいと思っているのであえてeclipseから更新することにしています。)</p>
-<p class="impression">ありがたや、ありがたや(-人-)</p>
-<p class="impression">I want to express my appreciation for writing this book.(@iskwa)</p>
-<p class="impression">GitHub thank you</p>
-<p class="impression">初めての Pull Request です。ありがとうございます。</p>
-<p class="impression">It's a nice book. </p>
-<p class="impression">楽しんで勉強してます</p>
-<p class="impression">( ^ω^ )</p>
-<p class="impression">初心者にとってハードルの高いPull Requestを実行できる環境を用意して頂き感謝しています。</p>
-<p class="impression">(^ー^)b</p>
-<p class="impression">Pull Requestを初めてやりました。わかりやすいです！！</p>
-<p class="impression">初めてのPull Requestです。(@junjunVC)</p>
-<p class="impression">Forkしたリポジトリをupstreamに追従させてからのPull Requestです。実践型の良い本をありがとうございます。</p>
-<p class="impression">簡単です。初プルリクエスト。work branch</p>
-<p class="impression">(・ω・)ノ</p>
-<p class="impression">初めてのプルリク(^^♪</p>
-<p class="impression">おっおっお。いいね！</p>
-<p class="impression">プルリクのかんたんな実践例がgit開発の理解にとても役立っています。ありがとうございます。</p>
-<p class="impression">pull request出来ているでしょうか、実践できて面白い本です、ありがとうございます。</p>
-<p class="impression">I'd be glad to merge this PR!!</p>
-<p class="impression"> 初めてのプルリク！！実践できるので楽しいです!!</p>
-<p class="impression">初めてのプルリク、ドキドキ</p>
-<p class="impression">実践できると覚えやすいですね</p>
-<p class="impression">この本のおかげでgithubデビューできました！</p>
-<p class="impression">最新の状況に則した説明があったら勉強しやすそうだなと思いました。ぜひ改訂版を。</p>
-<p class="impression">20171009!!!</p>
-<p class="impression">わかりやすい本だと思います</p>
-<p class="impression">ありがとうございます。楽しいですね。</p>
-<p class="impression">実際の現場で使う可能性が高いのでGitHubの勉強を始めました。本はすごく分かりやすいです。GitHubデビューです。</p>
-<p class="impression">gitは取っ付きにくくわかりにくかったのですが、本書はとても親切でわかりやすい本でした。現場でもgitが使えるようになりますように</p>
-<p class="impression">本の内容がとても分かりやすく、助かっています。</p>
-<p class="impression">いやしかし、この本はわかりやすくて素晴らしいです。３年前の本で少し情報が古い部分もありがすがとてもgithubを理解するのに助かりました。</p>
-<p class="impression">わかりやすくGitHubへの理解が深まりました。</p>
-<p class="impression">実際に手を動かしながらなのでとても分かりやすいです！</p>
-<p class="impression">forkしてPRを出す練習をさせてくれてありがたいです！</p>
-<p class="impression">初めてのPullRequest。まさにプルプルしながらのリクエストってか？！ガハハ</p>
-<p class="impression">実際に手を動かしながらなのでとても分かりやすいです！</p>
-<p class="impression">forkしてPRを出す練習をさせてくれてありがたいです！</p>
-<p class="impression">面白いほどよくわかるgit入門書です</p>
-<p class="impression">とても参考になりましたー。</p>
-<p class="impression">勉強になります。こういう実践環境を用意頂けているのもありがたいです。</p>
-<p class="impression">実践を通して実際に理解できる事が素晴らしいです。</p>
-<p class="impression">Thank you for giving me the opportunity to pull request!</p>
-<p class="impression">初めてのGithubです!共同でアプリなどを開発していくために始めました！</p>
-<p class="impression">この実践を通してgitの理解が深まります。2017/11/26</p>
-<p class="impression">もやもやしていたGitの世界がすっきりしてきました！</p>
-<p class="impression">gitの良い入門書です！</p>
-<p class="impression">面白い試みですねー。こういう企画求めていました。</p>
-<p class="impression">GitHub練習中、pull reqestが練習できるのは勉強になります</p>
-<p class="impression">PRを体験させてくれる良書です。これからOSSにたくさん貢献していきたいです。</p>
-<p class="impression">2018年の年始休みに勉強しています。とても分かりやすいです！！(@h-shima)</p>
-<p class="impression">なかなか一人では試しづらいpull requestもこうして試せるので勉強になります。</p>
-<p class="impression">pull reqを提出できるのはすばらしい!</p>
-<p class="impression">勉強中です．</p>
-<p class="impression">初めは難しかったですが段々GitHubが分かるようになってきました！</p>
-<p class="impression">とてもわかりやすく、参考になりました！！</p>
-<p class="impression">なかなか一人では試しづらいpull requestもこうして試せるので勉強になります。</p>
-<p class="impression">わかりやすく、サクサク読み進めています。</p>
-<p class="impression">勉強になりました。</p>
-<p class="impression">４章、６章と動作確認。３年前の本ですが、問題なくgitの使い方を学習できました。2018/01/11</p>
-<p class="impression">わかりやすくてとても良い入門書だと思います。</p>
-<p class="impression">Gitむずい！こういう本があるのはありがたい(@hidemi)</p>
-<p class="impression">なんとなく理解していたGitの知識がすごく整理されました。</p>
-<p class="impression">ありがとうございます</p>
-<p class="impression">GitHub勉強中</p>
-<p class="impression">勉強になりました</p>
-<p class="impression">Github practice now</p>
-<p class="impression">
-    とてもわかりやすい書籍です。実際に手を動かしながらGitHubについて学べるので、とても楽しく学習することができました。実際の開発でも利用できるようにさらに理解を深めていきたいと思います！
-</p>
-<p class="impression">手を動かして学べるのでわかりやすいです。</p>
-<p class="impression">Thank you for the chance to pull request :)</p>
-<p class="impression">新現場でGitを使うことになり、この本を買いました！とてもわかりやすくて非常に助かりました！！</p>
-<p class="impression">仕事でGitHubを使うとの事で、初めて勉強をしています。分かりやすく、とても助かります。感謝です。</p>
-<p class="impression">わかりやすい本で感謝です。</p>
-<p class="impression">2019/4/22</p>
-<p class="impression"> 2019/4/16 初めてのプルリクです。</p>
-<p class="impression"> 初めてのプルリクです。</p>
-<p class="impression">わかりやすくて重宝しています。</p>
-<p class="impression">非常に役にたっています。2019/03/18</p>
-<p class="impression">Gitでかいはつするぞい</p>
-<p class="impression">楽しいです（@fucchii)</p>
-<p class="impression">2019/3/21 4月からの入社に向けて勉強中です</p>
-<p class="impression">2019おるのかな?gitすごい、楽しい</p>
-<p class="impression">GitとGitHubの基本が理解できました。2019/3</p>
-<p class="impression">ありがとうございます！勉強中です</p>
-<p class="impression">再学習をしています</p>
-<p class="impression">2019/4/16</p>
-<p class="impression">実際に手を動かしながら進められるのでとても勉強になります。</p>
-<p class="impression">とてもわかりやすい！！！</p>
-<p class="impression">ありがとうございます。感謝します。(2019/6/5)</p>
-<p class="impression">勉強になりました。</p>
-<p class="impression">2019/6/25 Pull Request</p>
-<p class="impression">とてもわかりやすい！！！</p>
-<p class="impression">勉強させて頂きます。by tk</p>
-<p class="impression">プルリクエスト楽しいですね。最高の本でした。</p>
-<p class="impression">ぷるぷるぷるりくえすと。</p>
-<p class="impression">20019/07/20 プルリクエストを試す環境が提供されていてとても助かります。</p>
-<p class="impression">フォークしてクローンしてトピックブランチ作ってコミットしてプルリクエスト。</p>
-<p class="impression">ぷるぷるぷるりくえすと。</p>
-<p class="impression">GITHUBがんばるぞ</p>
-<p class="impression">GitHubたのしい</p>
-<p class="impression">再挑戦です。</p>
-<p class="impression">2019/08/17 Pull Request</p>
-<p class="impression">勉強させていただき、ありがとうございます。</p>
-<p class="impression">すぐに仕事で使えます。助かりました。</p>
-<p class="impression">GitHubってすごいですね！2019/10/17</p>
-<p class="impression">安心して練習できるのでありがたいです。</p>
-<p class="impression">2019/10/21 Pull Request</p>
-<p class="impression">2019/10/24 Pull Request</p>
-<p class="impression">普段SVNを使っている身からすると新鮮で楽しいですね。</p>
-<p class="impression">初プルリクです</p>
-<p class="impression">分かりやすいです！</p>
-<p class="impression">SVNからの脱却！楽しくなりそうだ。</p>
-<p class="impression">わかりやすい！！！！</p>
-<p class="impression">令和になってもお世話になってます</p>
-<p class="impression">とてもわかりやすいです。</p>
-<p class="impression">ありがとうございます</p>
-<p class="impression">勉強になりました</p>
-<p class="impression">Git最高！ @cantyan30</p>
-<p class="impression">PRの練習ができてありがたいです。</p>
-<p class="impression">体系的に勉強しなおしてます！わかりやすいです！</p>
-<p class="impression">SVNからGitに移行のため勉強中です</p>
-<p class="impression">Very Goooooood!</p>
-<p class="impression">わかりやすくてとても良いです。</p>
-<p class="impression">Pull Request勉強になります、大変助かります！</p>
-<p class="impression">世界が広がる！40歳 2021/04/29</p>
-<p class="impression">勉強になりました。ありがとうございます。</p>
-<p class="impression">Very Goooooooooooood!</p>
-<p class="impression">2021年現在、githubの仕様が少し変わっていますが、本書で十分理解が進んでいます</p>
-<p class="impression">初プルリクです。ワクワクしています！！</p>
-<p class="impression">Boot Camp #1頑張るぞ！</p>
-<p class="impression">分かりやすいです。ありがとうございます！@spchan5/5</p>
-<p class="impression">gitを学べば学ぶほどSubversionから脱却したくなりますね。</p>
-<p class="impression">この本でようやくgithubの使い方を習得できそうです。ありがとうございます。</p>
-<p class="impression">初pull request!実用的で分かりやすいです！</p>
-<p class="impression">物凄く勉強になります！</p>
-<p class="impression">勉強になります。改訂版も期待しています。</p>
-<p class="impression">PR経験ができるのはありがたいです</p>
-<p class="impression">非常に勉強になります!!今後OSS開発に貢献します!!</p>
-<p class="impression">今更ながら勉強中。参考になります。</p>
-<p class="impression">PR実践の場を提供いただき、ありがとうございます。こうして実際に手を動かせたことで、２回目以降のPRのハードルが下がったような気がします。</p>
-<p class="impression">初めてのプルリク、分かりやすい！</p>
-<p class="impression">はじめてのプルリク(2021/7/15)ありがとうございます．</p>
-<p class="inpression">PullRequestの勉強ができてとても良い教材でした</p>
-<p class="impression">PullRequestが実際に試せる機会ができて、ありがたいです。また、本の内容もとてもわかりやすくて、読みやすいです！</p>
-<p class="impression">なーなーでgitを使ってきましたが、この本でだいぶ理解が追いつきました!</p>
-<p class="impression">お世話になってます。2021年現在、サイトUIは本書と結構違いますが、Gitコマンドは問題なく使えます。まず個人開発で、本書をお供にガンガン使って慣れていこうと思います。(<a href="https://github.com/lalaPlus" target=”_blank” rel=”noopener”>@lalaPlus</a>)</p>
-<p class="impression">PRを体験するのは重要ですね</p>
-<p class="impression">楽しく勉強させていただいております。この本が私の師匠です。2021/08/16</p>
-<p class="impression">非常に実践的でわかりやすいです</p>
-<p class="impression">このような形で参加できるなんて素晴らしいです</p>
-<p class="impression">勉強になります。</p>
-<p class="impression">一度学ぼうと思って難しかったですが，これなら簡単な気がする！</p>
-<p class="impression">よくわかってないままGit Hubを使っていましたが、頭が整理されました。買ってよかったです。</p>
-<p class="impression">ありがとうございます.</p>
-<p class="impression">勉強になります！</p>
-<p class="impression">勉強になります。</p>
-<p class="impression">勉強になります!何度でも読み返します!!</p>
-<p class="impression">勉強になりました！！！</p>
-<p class="impression">とても勉強になります</p>
-<p class="impression">実際に手を動かせる機会を提供していただき感謝します</p>
-<p class="impression">実際に操作して学べてよいです</p>
-<p class="impression">Very Very Good!</p>
-<p class="impression">pullrequestが迫っていて勉強しています。</p>
-<p class="impression">もっと早くこの本に出会いたかったです。</p>
-<p class="impression">お試しPR</p>
-<p class="impression">わかりやすくてとても読みやすいです。</p>
-<p class="impression">Unityのバージョン管理のため勉強しています。実践的でとてもいい本だと感じます。2021/12/9</p>
-<p class="impression">PR？プルリ？プルリク？デビュー!!ありがとうございます。</p>
-<p class="impression">『GitHub実践入門』わかりやすいです。</p>
-<p class="impression">I'm tring to study GitHUB. Nice book for learn ! Thank you</p>
-<p class="impression">とてもわかり易く、ネットで情報を集めるより効率的に学習出来ました。</p>
-<p class="impression">2022年になりました。なんとなく使ってたgithubについて知識を整理することができて感謝しています！</p>
-<p class="impression">分かりやすいです！</p>
-<p class="impression"> やっと取り組めました!</p>
-<p class="impression"> 2022/02/06　画面の変更等、改訂版期待します。</p>
-<p class="impression">メンテナンスされているみなさま、ありがとうございます。</p>
-<p class="impression">自身のリポジトリで実験させてくれて、大変ありがたく思います。</p>
-<p class="impression">ありがとうございます</p>
-<p class="impression">とても勉強になります。何度も読み返してます。</p>
-<p class="impression">初めてのPRです！大きな一歩を踏み出せました！</p>
-<p class="impression">ありがとうございます。</p>
-<p class="impression">こういう実践形式の練習があると、非常にわかりやすいです！</p>
-<p class="impression">一歩踏み出すことが非常に大切ですね！実践形式はありがたいです。2022年3月時点問題ありません</p>
-<p class="impression">とても楽しく読ませて頂いています。</p>
-<p class="impression">なんとかPullRequestできました。</p>
-<p class="impression">PullRequestの練習をさせてもらいます！</p>
-<p class="impression">PullRequestの練習をさせてもらいます！ (2022年5月)</p>
-<p class="impression">初めてのPullRequestです。実際に自分の手で動かせるのはいいですね。(2022年7月)</p>
-<p class="impression">手を動かして学べるのは大変ありがたいです。</p>
-<p class="impression">2022年になり、GithubのページのUIがだいぶ変更されていました。</p>
-<p class="impression">とても勉強になってます</p>
-<p class="impression">超分かりやすい本で助かってます！(2022年8月)</p>
-<p class="impression">実際に手を動かしながら試せるので楽しい。分かりやすい。(2022年8月)</p>
-<p class="impression">初めてPRを送ります。githubを使いこなせるようになりたいです。(2022年9月)</p>
-<p class="impression">実際にプルリクエストもできてとても勉強になりました！！！！！(2022年12月)</p>
-<p class="impression">Git・GitHubの復習に購入して読ませていただいています。ハンズオンで学習できるのが大変ありがたいです！（2023年5月）</p>
-<p class="impression">実践的でとてもわかりやすいです！</p>
-<p class="impression">勉強になります</p>
-<p class="impression">体系的に学べてとても良い書籍だと感じました！！（2023/05/19）</p>
-<p class="impression">私の戦闘力は53万です。</p>
-<p class="impression">実際にプルリクエストを送れる場所があるなんて、非常に嬉しいです。良本。Twitter->@iQbu_より(2023年5月)</p>
-<p class="impression">来年からエンジニアとして働き始めるので、この本に大変助けられています。ありがとうございます。(2023年5月)</p>
-<p class="impression">実践する事でプルリクエストのイメージを付けることができました。</p>
-<p class="impression">git,githubへの理解が深まりました！pullrequestが自在に出せるように頑張ります！</p>
-<p class="impression">初めてのプルリクエストです！(2023年6月)</p>
-<p class="impression">GitHubに早く慣れたい（2023年9月）</p>
-<p class="impression">gitを通じて、過去数年間の多くの学習者の方々の足跡を見られるのも、何とも不思議な感覚です。このような場所、素晴らしい書籍を提供してくださりありがとうございます！！ 精進！！！ (2023/10) (<a href="https://github.com/paole21" >@paole21</a>)</p>
-<p class="impression">GitHubテスト（2023年10月27日）</p>
-<p class="impression">面白くてとても助かっています。</p>
-<p class="impression">わかりやすいです。githubのUIが変わっているので改訂版頑張って出してください！</p>
-<p class="impression">はじめてのPull Request（2023年12月19日）</p>
-<p >↑最新のコメント</p>
-<h3>正誤情報など</h3>
-<p>技術評論社Webサイト内の<a href="http://gihyo.jp/book/2014/978-4-7741-6366-6/support">本書のサポートページ</a>に掲載しています。</p>
-
-<h3>問い合わせ</h3>
-<p>本サイトについて問い合わせがありましたら<a href="http://hiroki.jp/contact/">こちら</a>からご連絡ください。</p>
-
+      <section id="wdpress">
+        <a class="wdpress_link" href="http://gihyo.jp/book/2014/978-4-7741-6366-6/support">GitHub実践入門</a>
       </section>
-    </div>
+    </header>
+  </div>
+  <!-- MAIN CONTENT -->
+  <div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
+      <h3>Pull Requestを送ってみよう！</h3>
+      <p>本サイトはGitHub実践入門にて、はじめてGitHubで Pull Request を送ってみるために特設されたサイトです。</p>
+      <p>本書をお買い上げの上、お試し頂けますと幸いです。</p>
+      <p>本ページに対応するリポジトリは、ページ上部の「Give me Pull Request」を押すと表示されます。</p>
+      <h3>ご注意</h3>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">first-pr maintained by <a href="https://github.com/hirocaster">hirocaster</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+      <p>本書の感想と関係のないことや誹謗中傷などは、管理者の判断で掲載を行わない可能性があります。</p>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("#impression_num").text( $("p.impression").length );
-});
-</script>
+      <p>今回のリポジトリにPull Requestを送っていただいた方には基本的にリポジトリへの権限を差し上げます。Pull Requestを受ける側としても触ってみて、実践してください。</p>
 
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-31168931-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
+      <p>一方、権限を差し上げた方が、Pull Request受信者として不適切な行為を行った場合、管理者の判断でリポジトリへの権限を削除する可能性があります。</p>
+
+      <p>本書に登場するサンプルリポジトリは、当面の間は筆者や有志（Pull
+        Requestを試される読者のみなさんを含む）を中心にメンテナンスされていく予定です。ただし、本書発売後、月日が経過している場合には反応が遅れる、あるいは反映できない可能性があります。ぜひ第7章やサンプルリポジトリのページを参照のうえ、ご協力ください。
+      </p>
+
+      <h3>本書の感想</h3>
+      <p>(現在<span id="impression_num"></span>件の感想が寄せられています)</p>
+      <p>新しいコメントは、表示されているコメントの最下部（「↑最新のコメント」と表記）に記入してください。</p>
+      <p class="impression">大変分かりやすいです！この本で楽しく勉強しています！</p>
+      <p class="impression">感謝です!わかりやすい!</p>
+      <p class="impression">分かりやすいです。ありがとうございます！</p>
+      <p class="impression">pull requestも試せて良い本です。(@me)</p>
+      <p class="impression">gitの使い方がわかり、とても良い本だと思います</p>
+      <p class="impression">役立ってます。</p>
+      <p class="impression">2019年でもGitHubの仕様は大きくは変わってないようで、本書のおかげでGitHubの理解が進みました！</p>
+      <p class="impression">IT戦闘力が上がりました</p>
+      <p class="impression">Eduardo Alano</p>
+      <p class="impression">いつも楽しく読んでいます（@otakeuchi）</p>
+      <p class="impression">ソフトウェア業界に転職し、GitHubを勉強しています。この本はとても役に立ちます！</p>
+      <p class="impression">仕事でgithubを使うことになりそうなので、2年ぶりくらいにやり直してます</p>
+      <p class="impression">楽しくやってる</p>
+      <p class="impression">初めてのPRです。まだ些細なことしかできませんが、どんどん開発に携われるようになっていきたいです。</p>
+      <p class="impression">git hub面白いです。この本もとても分かりやすくて良書だと思います。</p>
+      <p class="impression">I read this book interesting.</p>
+      <p class="impression">開発出来るようになりたいです。</p>
+      <p class="impression">実践を意識したこの演習法がとっても好きです。</p>
+      <p class="impression"> Pull Requestの練習ありがとうございます。これからGithubを使っていけるようにがんばります。</p>
+      <p class="impression"> 2017年現在、GitHubのUIレイアウトも本書の内容から大分変化しています。マイナーな問題かもしれませんが、できたらフォローお願いします。</p>
+      <p class="impression"> Macのvimで編集しています。画期的な演習ですね。</p>
+      <p class="impression"> このようなサイトを準備していただき、ありがとうございます。</p>
+      <p class="impression"> すごくいい！</p>
+      <p class="impression">"git remote add"と"git push -u"が今一理解できていないですが、便利そうです</p>
+      <p class="impression">現場で使うことになり勉強中です。とても役に立っています。</p>
+      <p class="impression">楽しんで身に着けます</p>
+      <p class="impression">ありがとうございます。まだ理解しきれていませんが、いろいろ試してみたいと思います。</p>
+      <p class="impression">git & githubは奥が深いですね～</p>
+      <p class="impression">Git,GitHub を用いた開発フローが良くわかりました。開発が楽しくなりそうです。ありがとうございました。とはいえ、まだまだ、修行が必要そうです。(^^;;) </p>
+      <p class="impression">わかりやすいです。とても勉強になりました。</p>
+      <p class="impression">読みやすく、分かりやすく、丁寧だと感じました。</p>
+      <p class="impression">実際に操作しながら学習できるのが凄く良いです。</p>
+      <p class="impression">thank you</p>
+      <p class="impression">git & githubは奥が深いですね～</p>
+      <p class="impression">ベリッシモ...分かりやすいッ!</p>
+      <p class="impression">大変楽しく学ばせていただいています</p>
+      <p class="impression">遅ればせながら、Pull Request</p>
+      <p class="impression">参考になりました。</p>
+      <p class="impression">参考になりましたですよ〜</p>
+      <p class="impression">わかりやすいです。とても勉強になりました。</p>
+      <p class="impression">いつも楽しく読んでいます。</p>
+      <p class="impression">初めてのgithubです！</p>
+      <p class="impression">実際にできるので理解が深まり感謝です！！</p>
+      <p class="impression">試行錯誤しながら、ちょっとずつ試してます。</p>
+      <p class="impression">この本はスゴイぞ！とても参考になりました</p>
+      <p class="impression">ありがとうございます！</p>
+      <p class="impression">例が正確なので助かります。</p>
+      <p class="impression">わかりやすいです。</p>
+      <p class="impression">ありがとマイファザー</p>
+      <p class="impression">First Pull Request!!!</p>
+      <p class="impression">#### Thank you! ####</p>
+      <p class="impression">#### Thank you2! ####</p>
+      <p class="impression">今まで見てきたどのGitHubの本よりも分かりやすかったです!</p>
+      <p class="impression">I'm studying git/github. This is an awesome book.</p>
+      <p class="impression">とても勉強になってます！</p>
+      <p class="impression">My First Pull Request</p>
+      <p class="impression">プルプルしながらプルリクエスト…</p>
+      <p class="impression">Hello World!!</p>
+      <p class="impression">今まで断片的な知識しかなかったのが，本書のおかげで理解が深まりました．</p>
+      <p class="impression">急遽、GitHugを使うこととなっため、勉強を始めました。</p>
+      <p class="impression">Pull Reuestの機会があるなんて、すごく良いです！</p>
+      <p class="impression">トピックブランチという慣習を学べたのが良かった</p>
+      <p class="impression">会社でGitHubを使うことになったので読み始めました</p>
+      <p class="impression">すごいわかりやすくて助かります！ありがとうございます！</p>
+      <p class="impression">これでGitHub使いになれました！ありがとうございます！</p>
+      <p class="impression">勉強になります</p>
+      <p class="impression">このようにPull Requestを実際に試しながら、学べるのはすごくいいですね。目指せ脱初心者!2016/06/12(<a
+          href="https://github.com/YutoMoon">@YutoMoon</a>)</p>
+      <p class="impression">Git 初心者には始めの部分がとても難しかったですが、以前よりも GitHub を理解できるようになりました。</p>
+      <p class="impression">面白い！！github.comと本の説明に使っている画面レイアウトが異なっていました。</p>
+      <p class="impression">面白い。どんどん学ぶぞ!!! 2016/05/30 (<a href="https://github.com/MchikA1216">@MchikA1216</a>)</p>
+      <p class="impression">Funtime!</p>
+      <p class="impression">プルリクエストの練習です。追加修正</p>
+      <p class="impression">タイトルの通りGitHubを実践的に学べるすごい入門書。2016/05/26 (<a
+          href="https://github.com/Hirotacas">@Hirotaca</a>)</p>
+      <p class="impression">初心者には敷居が高かった初PRの機会を与えてくださった本書に圧倒的感謝🙏(<a
+          href="https://github.com/nametaketakewo">@nametaketakewo</a>)</p>
+      <p class="impression">全くの初心者の私は,bash上でのエディタの開き方が分からず4章で行き詰りました。(<a href="https://github.com/A-taro">@A-taro</a>)
+      </p>
+      <p class="impression">初めてプルリクエストしました！</p>
+      <p class="impression">最近プルリクをやっていなかったので、練習になり、大変助かります！</p>
+      <p class="impression">実際に手を動かしてシステムの理解が深まるのはいいですね。現在 2016/04/25-14:04 です。</p>
+      <p class="impression">gitのコマンドでの操作が身につきました。GitHubについても細かく説明されていて、とてもわかりやすいです!!</p>
+      <p class="impression">こんなに多くの人が勉強していることに驚きました。負けてられない。<a href="https://github.com/straysheep3">@straysheep3</a>
+      </p>
+      <p class="impression">pull request</p>
+      <p class="impression">初プルリクエスト、初Fork！たのしい！(@mekemeke9)</p>
+      <p class="impression">新社会人に向けて勉強しています！丁寧で初心者の僕にもわかりました！プルリクってドキドキ！</p>
+      <p class="impression">とてもいい本だ</p>
+      <p class="impression">会社でこっそり勉強中</p>
+      <p class="impression">Github勉強</p>
+      <p class="impression">I am studying GitHub with the book.</p>
+      <p class="impression">初プルリクエスト。どきどき。</p>
+      <p class="impression">とても分かりやすいです！</p>
+      <p class="impression">Github勉強させていただいてます！わかりやすくて凄く参考になります！</p>
+      <p class="impression">はじめてのプルリクエスト</p>
+      <p class="impression">実際に操作しながら勉強できるので入門書として最適だと思います。</p>
+      <p class="impression">はじめてのぷるりくえすと (<a href="https://github.com/t-hirayama">@t-hirayama</a>)</p>
+      <p class="impression">「とにかく一度使ってみる！」という学び方には最適なテキストだと思います。がんばります！</p>
+      <p class="impression">まだよくわからない！！！＞＜</p>
+      <p class="impression">githubの苦手意識が一気に消えました！ありがとうございました！</p>
+      <p class="impression">2016年、遅ればせながら GitHub の勉強を始めました! 分かりやすく大変参考にしております! (<a
+          href="https://github.com/Neos21GitHub" title="GitHub - Neos21GitHub">@Neos21</a>)</p>
+      <p class="impression">実践的でとても勉強になります！</p>
+      <p class="impression">LGTM です！</p>
+      <p class="impression">勉強中</P>
+      <p class="impression">やっとこさで、ここまで来ました!</p>
+      <p class="impression">ソーシャルコーディングの<em>らしさ</em></p>
+      <p class="impression">とっても勉強になります！！</p>
+      <p class="impression">プルリクってドキドキ！</p>
+      <p class="impression">プルリクってドキドキ！！</p>
+      <p class="impression">初プルリク！</p>
+      <p class="impression">はじめてプルリク</p>
+      <p class="impression">my first pull-req...</p>
+      <p class="impression">大変勉強になりました！</p>
+      <p class="impression">プルリクTest Thank you from tyx</p>
+      <p class="impression">手順に従って進められるので、安心感を持って勉強できています。</p>
+      <p class="impression">非常にわかりやすいです。ありがとうございます。</p>
+      <p class="impression">はじめてのPullRequestです。</p>
+      <p class="impression">勉強させてもらってます。</p>
+      <p class="impression">Very Good !! </p>
+      <p class="impression">Pull Requestを初めて行うことが出来ました！ありがとうございます。</p>
+      <p class="impression">グッドモーニング dear github-book~~</p>
+      <p class="impression">初めての Pull Request。 2015/11/10</p>
+      <p class="impression">とても勉強になります。</p>
+      <p class="impression">GitHubを導入して継続的に改善される開発チームを作りたい。</p>
+      <p class="impression">変更１</p>
+      <p class="impression">test of pull req.</p>
+      <p class="impression">はじめてのぷるりく.....</p>
+      <p class="impression">楽しいよー</p>
+      <p class="impression">まさに実践入門、とった内容でした。</p>
+      <p class="impression">Git、Githubの使い方が体系的に学べ、大変勉強になりました。</p>
+      <p class="impression">これからGithubがしっかり使えるように頑張ります！</p>
+      <p class="impression">とても読みやすく、分かりやすいです(^^) 2015/08/17</p>
+      <p class="impression">ありがとうございます！</p>
+      <p class="impression">( ´ⅴ｀)大塚さんに感謝ですね。 </p>
+      <p class="impression">COOOOOOOOOOOOOOOOOOOL!!!</p>
+      <p class="impression">初めてのプルリク</p>
+      <p class="impression">実際にプルリクエストできて勉強になります！ありがとうございます</p>
+      <p class="impression">とてもわかりやすいです。ありがとうございます。</p>
+      <p class="impression">勉強中...</p>
+      <p class="impression">とてもわかりやすくて、楽しく勉強できてます。</p>
+      <p class="impression">Hello GitHubBook！</p>
+      <p class="impression">Git 楽しいやん！KazTera</p>
+      <p class="impression">Hello pull request! (Me3)</p>
+      <p class="impression">ぷるりくえすとおおおおおおお！15/8/5</p>
+      <p class="impression">楽しくpull requestを勉強してます！</p>
+      <p class="impression">わかりやすいです！</p>
+      <p class="impression">ありがとうございます</p>
+      <p class="impression">プルリクエストができる場を提供してくれてありがとうございます！</p>
+      <p class="impression">練習中。　2015年7月13日</p>
+      <p class="impression">非常に分かり易いです。参考になりました！</p>
+      <p class="impression">First PR [2015/07/12]</p>
+      <p class="impression">やっと辿り着きましたー(@tarooosan)</p>
+      <p class="impression">もう一度復習しています。</p>
+      <p class="impression">ぷるりん</p>
+      <p class="impression">初プルリク[2015-06-29]</p>
+      <p class="impression">初めて使います。なるほど、そういうことか。。。</p>
+      <p class="impression">もう一度復習がてらやってみました。</p>
+      <p class="impression">実際に操作して読み進められるので良かったです。</p>
+      <p class="impression">なるほど、これは便利です。ありがとうございます！</p>
+      <p class="impression">わかりやすいです。ありがとうございます。</p>
+      <p class="impression">プル、プル、プルリクエスト。プルプルプルプルプルリクエスト</p>
+      <p class="impression">実際に練習できるので、安心です！</p>
+      <p class="impression">first pull request. とてもわかりやすかったです！</p>
+      <p class="impression">いつも楽しく読んでいます！</p>
+      <p class="impression">説明が分かりやすかったです！ありがとうございました！！2015-06-04</p>
+      <p class="impression">手を動かしながらできるのが良かったです！</p>
+      <p class="impression">tutorial形式で学習しやすかったです</p>
+      <p class="impression">文章を読んでいるだけでは分かりにくいですが、実際に行ってみると分かりやすいです。助かります！</p>
+      <p class="impression">初めてPullRequestに挑戦できて良かったです。</p>
+      <p class="impression">初めてのプルリ2015/05/20</p>
+      <p class="impression">まだまだひよっこですが、少しずつ勉強していきます。</p>
+      <p class="impression">手を動かしながらだと理解を深めやすいです。良書をありがとうございます。</p>
+      <p class="impression">Nice :)</p>
+      <p class="impression">動作を確認しながら読み進めると、理解が深まりますね！(<a
+          href="https://github.com/KenichiSuda">KenichiSuda</a>)2015/05/01</p>
+      <p class="impression">わかりやすかったです。これからGitを使っていきたいです。</p>
+      <p class="impression">初プルリクエスト</p>
+      <p class="impression">コントリビュートしている感じで嬉しいです！</p>
+      <p class="impression">ぷるり楽しいです＞＜(<a href="https://github.com/kawasakikou">@kawasakikou</a>)</p>
+      <p class="impression">はじめてのpullrequestさせていただきました！</p>
+      <p class="impression">GITの操作も覚束ない初心者ですが、実践的で解りやすいのでずいぶん理解が進みました。有難うございます。</p>
+      <p class="impression">実際に手を使って実践できるのはとても有り難いです。お陰でようやく Pull Request を理解出来たような気がします。</p>
+      <p class="impression">初Pull Request。とても参考になります</p>
+      <p class="impression">実践的で分かりやすいです。 実務で活かす事が出来ました、ありがとうございます。</p>
+      <p class="impression">仕事でSVNからGITへ移行したのでこちらの本を参考にさせていただきます！</p>
+      <p class="impression">My First Pull Request (@surfhacker)</p>
+      <p class="impression">チーム開発の参考にさせていただきます。</p>
+      <p class="impression">First PR</p>
+      <p class="impression">初めてのPR!!!(@ivezuki)</p>
+      <p class="impression">初pr!</p>
+      <p class="impression">Hello , pull request. 図が多く非常にわかりやすかったです. @ShuzoN 2015-3-11 </p>
+      <p class="impression">この本を繰り返し読み返してGitHubを使いこなせるように頑張ります！</p>
+      <p class="impression">初プル</p>
+      <p class="impression">Pull Request Test...</p>
+      <p class="impression">Good!</p>
+      <p class="impression">great</p>
+      <p class="impression">初めてのぷるり。2015-03-10</p>
+      <p class="impression">丁寧な内容でとても参考になります。ありがとうございます。</p>
+      <p class="impression">わかりやすいです。自分のリポジトリからpull requestされるようになりたいです。@nishidashib </p>
+      <p class="impression">初プルリクです！ </p>
+      <p class="impression">Hello! Pull Request!!</p>
+      <p class="impression">gitについて、わかりやすく書かれて有難いです。 </p>
+      <p class="impression">実践的でとてもわかりやすいです！ </p>
+      <p class="impression">Pull Request ｷﾀ━(ﾟ∀ﾟ)━!! </p>
+      <p class="impression">仕事でプルリク多用するようなのでしっかり練習します</p>
+      <p class="impression">開発の流れにそった操作方法でわかりやすかったです！</p>
+      <p class="impression">実際に手を動かしながら学べる所が最高です！ </p>
+      <p class="impression">お試しサイトの存在、ありがたいです。</p>
+      <p class="impression">pull requestに挑戦です。</p>
+      <p class="impression">こういう試みはありがたいし、面白いですね </p>
+      <p class="impression">初めての Pull Request </p>
+      <p class="impression">GitHubを理解することでGitをよく理解できました。</p>
+      <p class="impression">GitHub マジ面白いっす！</p>
+      <p class="impression">saikou!</p>
+      <p class="impression">実践的でわかりやすいです。非常に助かります！</p>
+      <p class="impression">GitHub is great.</p>
+      <p class="impression">正月休み中に読んでいました。今年の目標はgit/Githubを使いこなせるようになることです。</p>
+      <p class="impression">あけましておめでとうございます。pull requestの練習ができる機会は少なく助かります。</p>
+      <p class="impression">年末駆け込みPull Request</p>
+      <p class="impression">とても有益でした。</p>
+      <p class="impression">Pull Request勉強中です</p>
+      <p class="impression">very useful</p>
+      <p class="impression">pull requestがよくわかっていなかったのでとても良い経験が得られました</p>
+      <p class="impression">実践的で素晴らしいです。</p>
+      <p class="impression">GitHub勉強中です！</p>
+      <p class="impression">初めてのPull Requestです。ドキドキ。</p>
+      <p class="impression">チームでGitHubを利用することになったので活用させて頂いています。</p>
+      <p class="impression">いつも楽しく読んでいます。(@FIROCASTER)</p>
+      <p class="impression">GitHub 便利ですね。とても理解しやすい本です。(@taketonigeuma)</p>
+      <p class="impression">実際に試すことで、理解が深まります。</p>
+      <p class="impression">とても素敵な本です。勉強がんばりまっす！！</p>
+      <p class="impression">実際にPull Requestできるところがとてもいいです。</p>
+      <p class="impression">書籍もわかりやすく、実際にgithubで体験できるのも面白いです。</p>
+      <p class="impression">着実に勉強中。（@whim0321）</p>
+      <p class="impression">実際に操作できるのがありがたいと思います。</p>
+      <p class="impression">勉強になりました。ありがとうございます。</p>
+      <p class="impression">手を動かして学べて、とても良かったです。</p>
+      <p class="impression">すばらしい試みですね。他の本も見習って欲しいです。</p>
+      <p class="impression">勉強になります。仕事に活用します。</p>
+      <p class="impression">素敵な書籍ありがとうございます。実際に試すことができ勉強になります！(<a href="https://github.com/orgimoto">@orgimoto</a>)</p>
+      <p class="impression">勉強になります。git、もっと使いこなせるようになりたいな。</p>
+      <p class="impression">独学で学んでいるのでこうした環境を用意していただけているのはとても助かります。</p>
+      <p class="impression">初Pull Request!</p>
+      <p class="impression">いかしてる本です。参考になります。</p>
+      <p class="impression">とてもわかりやすく、素晴らしいです！</p>
+      <p class="impression">日本のGitおよびGitHubの普及にかなり寄与していると思います。最高の書籍ありがとうございます。(@hamako9999)</p>
+      <p class="impression">大変わかりやすい書籍でした。ありがとうございます。(@dadadadone)</p>
+      <p class="impression">初めてのPull Requestです。この本でPull Requestに至るまでの一連の流れがとても良くわかりました。ありがとうございました！(<a
+          href="https://github.com/pione30">@pione30</a>)</p>
+      <p class="impression">まさに直接GitHubを触りながら勉強できる。本を読んだだけではなかなか分かりづらいのもこれなら覚えが早い！(@peibabo)</p>
+      <p class="impression">実際に利用しながら行うので、非常にわかりやすいです。ありがとうございます。(@fagai)</p>
+      <p class="impression">GitHubを実際に触りながら勉強できるため大変助かっております。(@yamasaki-chachi)</p>
+      <p class="impression">Gitの使い方に関してもいい復習になった。初めてGithubを触ったが開発管理に使えるメニューが豊富なことに驚いた(@inakeen)</p>
+      <p class="impression">GitHubの文化に少しずつでも慣れていければいいなと思います。2014/08/22(@yokomee)</p>
+      <p class="impression">なるほど，Pull Requestのやり方がよく分かりました！</p>
+      <p class="impression">First Pull request. Thank you.</p>
+      <p class="impression">気軽に Pull Request を練習する機会を与えてくださりありがとうございます。素晴らしいアイデアだと思います。(@ekatiron)</p>
+      <p class="impression">素晴らしい、参考になった！(@ykHakata)</p>
+      <p class="impression">この本からさらに開発のスキルを高め、技術力を高めたいと思います</p>
+      <p class="impression">この本をきっかけに、オープンソースの世界にもっと深く関わっていきたいです</p>
+      <p class="impression">考え方、使い方両方がバランスよく理解できてよかったです。ありがとうございます。</p>
+      <p class="impression">この本に出会えて良かったです。(@komainukunn)</p>
+      <p class="impression">勉強になりますd</p>
+      <p class="impression">書籍までインターネットと融合する時代なんですね。</p>
+      <p class="impression">大学研究室の輪講でこの本を使っています。</p>
+      <p class="impression">これからこの本でGitHubを有効に使えるように成長したいと思います。。</p>
+      <p class="impression">実際に手を動かせる場所を用意して頂きありがとうございます</p>
+      <p class="impression">実際に手を動かすため、とてもわかりやすいです。</p>
+      <p class="impression">とてもわかりやすく、勉強になります。</p>
+      <p class="impression">いつも楽しく読ませてもらってます。(@sa39ua)</p>
+      <p class="impression">初PullRequestです。実際に手を動かしながら学べるので分かりやすいです。 </p>
+      <p class="impression">初めてのPullRequestです。これから色々なプロジェクトに参加していきたいっす！</p>
+      <p class="impression">個人でしか使ったことがなかったので、これを機会にチームでも使用しようと思っています。</p>
+      <p class="impression">GitHubは便利そうだけど、難しそう……という思いを断ち切れました。友達と一緒に勉強しています。</p>
+      <p class="impression">GitHub勉強中。仕事でもプライベートでも使えるようになりたい。</p>
+      <p class="impression">実際に手を動かしながら学べるのでわかりやすいです</p>
+      <p class="impression">勉強になりました！</p>
+      <p class="impression">初めてのPullRequestです。個人でGitHubを使いたくて購入しました。分かりやすい解説で大変勉強になりました。</p>
+      <p class="impression">会社でSubversionからGitHubへ移行するために買いました。わかりやすくて助かります！</p>
+      <p class="impression">とても分かりやすい本で助かります。ありがとうございました。(@takafumir)</p>
+      <p class="impression">GitHubについて、Webの記事では断片的な知識しか得られず理解が不足していましたが、本書を通して知識を身につける事ができました。ありがとうございます。</p>
+      <p class="impression">SubversionからGitHubへ脱皮中！</p>
+      <p class="impression">わかりやすくてとってもいいね！</p>
+      <p class="impression">とてもわかりやすく、大変勉強になりました。</p>
+      <p class="impression">使いながら学べます。GitHub始めるならこの本ですね！（@waterlow）</p>
+      <p class="impression">素晴らしい本をありがとうございます（@knj）</p>
+      <p class="impression">GitHubの記事を読んだだけでは分からないことも多く、実践できるこの入門書は本当にすばらしいです。(@kazusa7)</p>
+      <p class="impression">Pull Requestをコミュニケーションの場として使って行きたいです。BY KZ</p>
+      <p class="impression">この本のおかげで、今まで躊躇していたGitHubの世界に入れました。<br />みんなで感想をPull Requestしていくこの試みも素晴らしい！(@hyugavirus)</p>
+      <p class="impression">とてもわかりやすい本でした！(@onot)</p>
+      <p class="impression">実践できたと思います。(@japankojika)</p>
+      <p class="impression">ありそうでなかったGithub入門書。実践的に勉強できるのさくさく進められました。(@Syamusuke)</p>
+      <p class="impression">勉強してます。</p>
+      <p class="impression">非常にわかりやすかったです。</p>
+      <p class="impression">こんなに実践的な本は初めてです。ありがとうございました。(@jumperson)</p>
+      <p class="impression">実践できるの、素敵です。…(@yayoc)</p>
+      <p class="impression">実際にやってみるのがｽｰｯと効いて…これはありがたい…(@5ensi61e)</p>
+      <p class="impression">試しながらできるので楽しく理解できます。(@spagetty)</p>
+      <p class="impression">とても良いです(@iperant)</p>
+      <p class="impression">今まで漠然と使っていましたが、知らなかった機能があり参考になりました。(@drmaruyama)</p>
+      <p class="impression">説明が丁寧でとても理解しやすいです。同僚にも勧めたいと思います!(@nkkn1008)</p>
+      <p class="impression">実践的でとても理解しやすいです。ありがとうございます。(@riverk2)</p>
+      <p class="impression">初のPull Requestです、手を動かして”実践”出来るのはいいですね。(@anohito)</p>
+      <p class="impression">初めてのプルリクエストを体験できました。ありがとうございました！(@fortkle)</p>
+      <p class="impression">だんだんと使い方が分かってきました。ここまで挫けずできています。(@maria-satb)</p>
+      <p class="impression">実践できたのがとても良かったです。ありがとうございます。(@takoji3)</p>
+      <p class="impression">この本のおかげで、大学の単位が取れそうです！感謝！@kenpo</p>
+      <p class="impression">なんとなくで使っていたGitHubが身近に感じられるようになりました。ただ本を読むだけでなく、実践できる立体感が新鮮で楽しいです。(<a
+          href="https://github.com/regu">@regu</a>)</p>
+      <p class="impression">いいね！ 2014/04/06</p>
+      <p class="impression">とても丁寧な解説もさることながら、実際に手を動かして学習出来るのでとても理解しやすいです！(@sivukai) 2014/3/30</p>
+      <p class="impression">とても役に立ちました！(@HIROCASTER)</p>
+      <p class="impression">実際にプルリクエストを送ってみるという学習法は面白いですね！(@maeharin)</p>
+      <p class="impression">GOOOOOOOOOOD!!!(@masaka)</p>
+      <p class="impression">分かりやすく勉強になりました。現場でも利用してみます。</p>
+      <p class="impression">今後はGithubを積極的に活用していこうと思います(@hidetzu)</p>
+      <p class="impression">わかりやすいです！(@mkaw)</p>
+      <p class="impression">git/GitHub について今知りたいこと, 興味を持っていたことが網羅され分かりやすく解説されていてとても勉強になりました！！(@sqrtxx)</p>
+      <p class="impression">感想書きました。ありがとうございます。<a
+          href="http://d.hatena.ne.jp/hyoshiok/20140322/p1">GitHub実践入門を読んでGitとかGitHubについて考えた</a>(@hyoshiok)</p>
+      <p class="impression">感想だとPR出しやすいですね。(<a href="https://github.com/masutaka">@masutaka</a>)</p>
+      <p class="impression">素晴らしい from 徳島</p>
+      <p class="impression">キーボードショートカット等の細かいtipsの紹介も便利だった (<a href="https://twitter.com/ainame">@ainame</a>)</p>
+      <p class="impression">解説がとても丁寧で分かり易いです。(<a href="https://twitter.com/ssmylh">@ssmylh</a>)</p>
+      <p class="impression">6章と7章のpull requestの送り方、取り込み方が実践的でいいですね。(@wyukawa)</p>
+      <p class="impression">わかりやすい！実際に手を動かしながらやると理解が深まりますね。</p>
+      <p class="impression">本書のおかげで、GitHub のモヤモヤが晴れました。それにしても、この実践的な PR 体験いいですね。（@autumngoodluck）</p>
+      <p class="impression">pull request を実践できるのは面白いですね (@YAMASHITAHiroki)</p>
+      <p class="impression">これをテキストに社内に広めたいと思います。 @ken200</p>
+      <p class="impression">本書を読めたことで、よりGithubを便利に扱えそうです。感謝です。(<a href="https://github.com/keitarou">@keitarou</a>)</p>
+      <p class="impression">キーボードショートカットをもっと積極的に使いたいと思いました！ (<a
+          href="https://twitter.com/fakestarbaby">@fakestarbaby</a>)</p>
+      <p class="impression">OSSへPRを送るのに参考となる知識がまとまって得られると感じています。 (<a
+          href="https://twitter.com/WoodCoreWood">@WoodCoreWood</a>)</p>
+      <p class="impression">PRを気軽に体験できるのは素晴らしいです(<a href="https://github.com/ikdysfm">@ikdysfm</a>)</p>
+      <p class="impression">Pull Requestを送ることへの敷居が低くなりました。</p>
+      <p class="impression">「実際にPull Requestを送ってみる書籍」というのは斬新です。感銘を受けました。(<a
+          href="https://github.com/axross">@axross</a>)</p>
+      <p class="impression">未利用でしたが導入～PRまで、「実践」しながら「入門」できている感があります。良書をありがとうございます！(@kinops)</p>
+      <p class="impression">この本のおかげで現場にGitHubが導入されました！ありがとうございます！(@warashina)</p>
+      <p class="impression">素晴らしい体験をさせていただき、ありがとうございます。(@kouh)</p>
+      <p class="impression">こういう本を待ってました！（@kshi6609）</p>
+      <p class="impression">今まで何となーくgithubを覗いていたのですが、あまり機能を理解できてませんでした。この本のおかげでちゃんとgithubを使い始めることが出来そうです。ありがとうございます！(<a
+          href="https://github.com/manuluu">@manuluu</a>)</p>
+      <p class="impression">GitHubを学ぶには何が必要か情報が整理されていて買って良かったです。教科書として活用していきたいと思います。(<a
+          href="https://twitter.com/skit_n">@skit_n</a>)</p>
+      <p class="impression">
+        基本的なgitの使い方から説明してあって、理解が深まりました。今話題のPullRequestについて、手順をおって説明してあるので、これからOSSに関わろうとする人によっては必須本になるのではないでしょうか。(@wolfmasa)
+      </p>
+      <p class="impression">とてもわかりやすいです、周りに広めてみようと思います！(<a href="https://github.com/cohalz">@cohalz</a>)</p>
+      <p class="impression">Pull Requestに対する漠然とした不安がなくなりました。手を動かすのが一番ですね。(@yukihir0)</p>
+      <p class="impression">
+        GitHubにアカウントを作成したのは、ずいぶん前ですが、情報系の企業で働いている訳でもなく、自分の周りにも使っている人がいないので、gitもGitHubもなかなか感覚をつかめずにいました。Pull
+        Requestという言葉も聞いたことはありましたが、実際、自分が今まさにやろうとしているとは夢のようです。これも本書の出会いのお陰だと感謝してます！(<a
+          href="https://twitter.com/maehrm">@maehrm</a>)</p>
+      <p class="impression">基礎から学ぶには適している書籍だと感じました。prを送る仕組みも面白いと思います。(<a
+          href="https://twitter.com/diskogs">@diskogs</a>)</p>
+      <p class="impression">はじめてのPull Requestです。ようやくですがGitHubについて理解することが出来たと思います。出版して頂きありがとうございました！(@Twinuma)</p>
+      <p class="impression">GitHub Enterpriseを現場で使いたくなりました。あとPull Requestで特設ページに感想を書き込むってアイデアは良いですね。(<a
+          href="https://twitter.com/tomute">@tomute</a>)</p>
+      <p class="impression">なるほど！わかりやすいです。ありがとうございます。(@blowbend-jp)</p>
+      <p class="impression">日常的にGithubを使っていても初めて知る内容が結構あって参考になりました！ (@sue445)</p>
+      <p class="impression">最初の一歩を後押ししてくださってありがとうございます。(@nsambo)</p>
+      <p class="impression">実際に手を動かして学べる素晴らしい書籍だと思います。初Pull Requestも体験できて嬉しいです。(<a
+          href="https://twitter.com/lancork">@lancork</a>)</p>
+      <p class="impression">参考になります、勉強になります。(<a href="https://github.com/shokoshi">@shokoshi</a>)</p>
+      <p class="impression">pull request用のサイトを作っていただけたのはとてもありがたいです。勉強になります。(<a
+          href="https://github.com/moririring">@moririring</a>)</p>
+      <p class="impression">今までPull Requestを送る事に抵抗がありましたが、この本と練習のおかげで抵抗がなくなりました！ありがとうございます！(<a
+          href="https://github.com/kouki-dan">@kouki-dan</a>)</p>
+      <p class="impression">実際に手を動かしながら学んでいるところですが、GitHubへの見えない抵抗感がやわらいできています。(@msya3)</p>
+      <p class="impression">基本的な操作方法から実際にPull Requestを行うところまで解説されていて大変参考になりました。</p>
+      <p class="impression">very good!</p>
+      <p class="impression">半日で半分読めました。すらすら進むので楽しいです</p>
+      <p class="impression">非常にわかりやすく、自分が使い切れていない機能が明確になりました。いつか業務でも...(@fukuiretu)</p>
+      <p class="impression">実践の名の通り、実際に動かして理解できてとても参考になりました。こういう書籍がもっと増えるといいなぁ。(<a
+          href="https://github.com/abachibi">@abachibi</a>)</p>
+      <p class="impression">実際に手を動かすことで、PullRequestのやり方を学ぶことができてとても勉強になります！(@tomigungun)</p>
+      <p class="impression">これからGitHubをどんどん使っていきたいという気持ちになりました。(@smile-0yen)</p>
+      <p class="impression">テンポ良く学べて楽しいです。GitHubにチャレンジするきっかけを与えてくださって感謝します。(<a
+          href="https://github.com/taksato">@taksato</a>)</p>
+      <p class="impression">PRについてよくわかりました。(<a href="https://github.com/kuron99">@kuron99</a>)</p>
+      <p class="impression">書籍購入時点ではGit知識ゼロだったのですが、この本のおかげで大分理解を進めることができました。ありがとうございました！(@KenjiI)</p>
+      <p class="impression">とても勉強になりました。これからもっと積極的にGitHubを利用したいと思います。(@hiro1270jpn)</p>
+      <p class="impression">Pull Request用のリポジトリを作って頂けたのがとても良かったです。さっそくプルリク送らせて頂きます(<a
+          href="https://github.com/koogawa">@koogawa</a>)</p>
+      <p class="impression">実際にPull Requestを送ってみることができるなんて、素敵です！ (<a href="https://github.com/satoyos">@yoshipa100</a>)
+      </p>
+      <p class="impression">手を動かしながらなので、理解が深まりやすかったです(<a href="https://github.com/tq-jappy">@tq-jappy</a>)</p>
+      <p class="impression">手を動かして実践でき素晴らしいと思います。ありがとうございます。(<a href="//github.com/sugarshin"
+          target="_blank">@sugarshin</a>)</p>
+      <p class="impression">pull request用のサイトを作っていただけたのはとても勉強になります！(@threecourse)</p>
+      <p class="impression">わかりやすく以前よりも深く理解できました。今後活用していきたいと思います。(<a href="https://github.com/pixyzehn"
+          target="_blank">@pixyzehn</a>)</p>
+      <p class="impression">実践的で解りやすいです。プルリク送らせて頂きます。</p>
+      <p class="impression">丁寧な解説で非常に分かりやすかったです。特に第９章「GitHubを利用した開発フロー」はチームで開発する上で参考になります。ありがとうございます！(@yonet77)</p>
+      <p class="impression">本読みました。大変参考になりました。ありがとうございました。koyama</p>
+      <p class="impression">実践的で、とても参考になりました。自分から自分へのプルリクが、ナルホドと思いました。(@exabugs)</p>
+      <p class="impression">とても分かりやすかったです！早速、ソーシャルコーディングを始めたいと思います。<a href="https://github.com/kenji-takemoto"
+          target="_blank">@kenji-takemoto</a></p>
+      <p class="impression">手を動かすことで理解が深まります！(@ottijp)</p>
+      <p class="impression">お勉強中ですが分かりやすいです。6章の写経中でプルリク送ります～(@makopi23)</p>
+      <p class="impression">実際にプルリクを飛ばしながら勉強できるなんて、素晴らしい本ですね。(@hnagaya)</p>
+      <p class="impression">実践できるのがとてもうれしい(@boheanimato)</p>
+      <p class="impression">はじめてgithubに触ったのですが、とてもわかりやすく重宝しております</p>
+      <p class="impression">参考になります！ありがとうございます。</p>
+      <p class="impression">書籍を片手にterminalを叩くのは、楽しい時間です。</p>
+      <p class="impression">この本ができてくれて本当に良かった。(<a href="https://github.com/isuke" target="_blank">@isuke</a>)</p>
+      <p class="impression">私にも出来ました！ありがとうございます。</p>
+      <p class="impression">Pull Request学習の場を設定していただき、ありがとうございます。とても勉強になります。</p>
+      <p class="impression">入門書としてはまずまずの感じです</p>
+      <p class="impression">とてもわかりやすいです！</p>
+      <p class="impression">会社で購入し、Github導入に向けて参考にさせてもらっています!(@bazarak)</p>
+      <p class="impression">はじめての挑戦中です。</p>
+      <p class="impression">実践の場所があって分かりやすいです！ありがとうございます。(@childbamboo)</p>
+      <p class="impression">買ってよかった！</p>
+      <p class="impression">とても参考になります</p>
+      <p class="impression">本だけではなくて、実際に使ってみる仕組みを準備しているのが良かったです。</p>
+      <p class="impression">実際に試してみる環境が用意されてるのが素晴らしい。</p>
+      <p class="impression">とても読みやすく、重宝してます！(@dora56)</p>
+      <p class="impression">職場ではVisual Source Safeばかりなので実践できてうれしいです</p>
+      <p class="impression">Pull Requestを試せる環境まで提供してくれているのが素晴らしいです。買ってよかった。(@saitoryc)</p>
+      <p class="impression">プル！ぷる！りくえすと(@joy-git)</p>
+      <p class="impression">初めてのpull request(@onigumagawaranomaru)</p>
+      <p class="impression">わかりやすいです。ありがとうございます。</p>
+      <p class="impression">とてもわかりやすいです。</p>
+      <p class="impression">機能の解説が体系的でわかりやすく、今後に生かせそうです。欲を言えば電子書籍版ほしかったです。(@ushiushix)</p>
+      <p class="impression">わかりやすいです!!</p>
+      <p class="impression">Hello GitHub!!</p>
+      <p class="impression">楽しいです</p>
+      <p class="impression">初めてのプルリクエスト、ドキドキ・・・。 説明を読みながらスムーズに操作できました！(<a
+          href="https://github.com/oimohime">@oimohime</a>)</p>
+      <p class="impression">手を動かしながらでわかりやすいです。(@fipofipo)</p>
+      <p class="impression">実際にPull Requestを送れるのがとても良いです。</p>
+      <p class="impression">git勉強中。</p>
+      <p class="impression">GitHubへの入り口を作ってくれたのが、この本でした。ありがとうございます。</p>
+      <p class="impression">Pull Request を試せるのが嬉しいですね。まさに実践入門！(@skybluefactory)</p>
+      <p class="impression">良書です。Gitを鋭意勉強中!</p>
+      <p class="impression">分かりやすい。Pull Request実践！</p>
+      <p class="impression">非常に分かりやすかったです。Travis CIやCoverallsも紹介されていて、参考になりました。(<a
+          href="https://github.com/k-enomoto">@k-enomoto</a>)</p>
+      <p class="impression">git本体のハンズオンとプルリク体験、両方できてお得です。Way of GitHubって感じですね。(@katsumitk)</p>
+      <p class="impression">星 5つ!! ★★★★★ </p>
+      <p class="impression">Pull Request</p>
+      <p class="impression">学習と実戦ができる良書です。takaboo</p>
+      <p class="impression">TechLunchで練習中です！</p>
+      <p class="impression">手を動かしながらGitHubについて詳しく学べるので、飽きずに学習できます。(<a href="https://github.com/0tofu">@0tofu</a>)</p>
+      <p class="impression">わかりやすかったです。良い本！(@fumobox)</p>
+      <p class="impression">このようなインタラクティブな試みもgithubがあるからこそですね！実感出来ました(<a
+          href="https://github.com/kyokoshima">@kyokoshima</a>)</p>
+      <p class="impression">Pull Requestを実際に体験して学べるのはとてもありがたいです。(<a
+          href="https://github.com/yuichigoto">@yuichigoto</a>)</p>
+      <p class="impression">これまで難しいと思って手を出せていなかったGitとGitHubの凄さが身にしみました。素晴らしい本です。(<a
+          href="https://github.com/AtsushiSakai">@AtsushiSakai</a>)</p>
+      <p class="impression">GitHubが身近になりました！(@yoshixmk)</p>
+      <p class="impression">Niceです！最近、技術評論社さんは良い仕事してますね！(<a href="https://github.com/digitero">@digitero</a>)</p>
+      <p class="impression">本当にわかりやすくて、素晴らしい本でした。ありがとうございました。(<a href="https://github.com/sho322"
+          target="_blank">@sho322</a>)</p>
+      <p class="impression">今まで何となく利用してましたが、やっとすっきりしました！(<a href="https://github.com/seteoceano">@seteoceano</a></p>
+      <p class="impression">My first Pull Request :) (<a href="https://github.com/epokishi">@epokishi</a>) </p>
+      <p class="impression">練習させてくれてありがとうございまーす（<a href="https://github.com/yuma25689">@yuma25689</a>）</p>
+      <p class="impression">勉強中です！</p>
+      <p class="impression">がんばる！</p>
+      <p class="impression">これでWEBエンジニアを目指せそうです。(tmak1000)</p>
+      <p class="impression">はじめてのプルリク</p>
+      <p class="impression">It's very helpful, thank you!</p>
+      <p class="impression">体験ができるのはとても助かりました。（<a href="https://github.com/futabooo">@futabooo</a>）</p>
+      <p class="impression">この本のお陰で、私もこれからGit/GitHubを使い始めていくことが出来そうです。(@hasegawatakac)</p>
+      <p class="impression">初めての Pull Request です。実際に試してみることができるのがいいですね。</p>
+      <p class="impression">本を読むだけじゃなく、手を動かして体験できるというのは素晴らしい</p>
+      <p class="impression">第6章プルリク実践！ここまで一気に読み切ることができました。読みやすく、進めやすかったです！</p>
+      <p class="impression">GitHubの使い方がいまいちもやっとしていたところを本書を通じて解消できました。</p>
+      <p class="impression">GitとGitHub勉強中。Pull Requestを実際に送る経験はありがたいです。第６章以降もワクワクしながら読みたいです。<a
+          href="https://github.com/fujifuji3284" target="_blank">（@fujifuji3284）</a></p>
+      <p class="impression">My First Pull Request ! Thanks for your book !</p>
+      <p class="impression">感想書かせていただきました→<a href="http://satomikko94.hatenablog.com/entry/2014/07/10/233111"
+          target="_blank">★</a>　github利用方法だけでなく活用方法に触れてたのが良かったです。特に9章の開発フローのところはすごく参考になりました！(@satomikko94)</p>
+      <p class="impression">読むだけでなく実践することもできて、とても勉強になります。</p>
+      <p class="impression">初めてのPR。楽しく読んでいます！(@otomarukanta)</p>
+      <p class="impression">実際にPRを送って感想を受け取るのって、面白い試みだと思いました！</p>
+      <p class="impression">とても参考になりました！</p>
+      <p class="impression">第6章より初めてのPull Request! わかりやすくて実践的な本だと思います。</p>
+      <p class="impression"><b>勉強になります。</b>ありがとうございます。(@yujihamaguchi)</p>
+      <p class="impression"><b>勉強になります。</b></p>
+      <p class="impression"><b>Hello!World!</b></p>
+      <p class="impression">第6章 初めてのPull Request練習です</p>
+      <p class="impression">勉強になります!</p>
+      <p class="impression">第6章 初めてのPull Request練習です 2014/07/30</p>
+      <p class="impression">会社ではAtlassian Stashなので、GitHubでは初PullRequest!</p>
+      <p class="impression">わかりやすい本でした！</p>
+      <p class="impression">とてもわかりやすい本でした！</p>
+      <p class="impression">大変わかりやすい本だと思います．ありがとうございます．</p>
+      <p class="impression">改めてGitの復習とGitHubの勉強中です。とても参考になります。</p>
+      <p class="impression">初めてのPull Request練習です </p>
+      <p class="impression">PR 練習します </p>
+      <p class="impression">初Pull Requestです．とても分かりやすい本で，GitとGithubが理解しやすかったです．</p>
+      <p class="impression">実践的に学ぶことができ、大変勉強になります。</p>
+      <p class="impression">とても勉強になります。タイトル通りの実践入門書だと思います。</p>
+      <p class="impression">いつも楽しく読んでます。</p>
+      <p class="impression">Githubの勉強をはじめました。よい参考書に巡り会えた私は幸せ者です。2015.08.10 </p>
+      <p class="impression">もっと勉強します。</p>
+      <p class="impression">スラスラ読めてしまった PR関係が練習できてうれしいです 2014/08/03(<a href="https://github.com/occar421">@occar421</a>)
+      </p>
+      <p class="impression">実践的でとても勉強になりました。 2014/8/19 (<a href="https://github.com/ak1t0">@ak1t0</a>)</p>
+      <p class="impression">説明がとても分かりやすいです。PR後に追加した文字列</p>
+      <p class="impression">わかりやすくて非常に良い本です。2014/08/16(<a href="https://github.com/kanpou0108"
+          target="_blank">@kanpou0108</a>)</p>
+      <p class="impression">my first PR. very easy.</p>
+      <p class="impression">実際に手を動かし、Pull Requestを試せるので良いです。2014/08/23</p>
+      <p class="impression">初Pull Requestしてみました。実際に自分の手で実践できるので、非常に参考になりました。このような試みに感謝します。</p>
+      <p class="impression">はじめてのPull Request。とても楽しい試みです。ありがとうございます。</p>
+      <p class="impression">
+        アホなおっさんでも理解できる本で助かります。Gitの入門書としても今まで読んだなかで一番わかりやすかったです。GitHubの思想とプレーモデルによって背骨が一本しっかり通っているから、「なんで、そうなるの？」と首をかしげるシーンがほとんどありません。(@kohey)
+      </p>
+      <p class="impression">Pull Requestしてみました。実践で手を動かせるのではかどります！2014/9/3</p>
+      <p class="impression">とても勉強になります。</p>
+      <p class="impression">プルリク試せるのは非常にありがたいです！</p>
+      <p class="impression">はじめてのpull request</p>
+      <p class="impression">初心者にもとても易しいです。</p>
+      <p class="impression">2014.9.3 はじめてのPull Request。</p>
+      <p class="impression">書籍とwebサービスが一体となっているのは初めての体験です。</p>
+      <p class="impression">実際に手を動かして確認できますので、自信がつきました。</p>
+      <p class="impression">他の本にくらべてストーリーがあり、とても読みやすく身になりました。</p>
+      <p class="impression">はじめてのPull Request ny </p>
+      <p class="impression">githubってすごいです。</p>
+      <p class="impression">わかりやすい。(@murapon)</p>
+      <p class="impression">プルリクは初心者にはハードルが高いのでこういったデモがあるのは嬉しいです。(@fixx_man)</p>
+      <p class="impression">githubの各機能が詳しく網羅されており、大変分り易い本です。プルリクを試せる企画も有り難いです。(<a
+          href="https://twitter.com/tomcha_">@tomcha_</a>)</p>
+      <p class="impression">プルリクできてうれしい！(@ryosuketter)</p>
+      <p class="impression">実践的でとてもわかりやすかったです。</p>
+      <p class="impression">実践的な本なので面白いです。</p>
+      <p class="impression">"GitHub"に焦点を絞った、とても実用的な参考書だと感じました。</p>
+      <p class="impression">手を動かせる場を提供する試みはすばらしいと思います。</p>
+      <p class="impression">やっとここまできました。実践でしっかり使えるかしら。</p>
+      <p class="impression">githubの魅力が伝わりました！</p>
+      <p class="impression">このように実際に試せるサイトがあると理解がより深まりますね！</p>
+      <p class="impression">とても実践的で勉強になります。</p>
+      <p class="impression">とてもわかりやすいです。</p>
+      <p class="impression">大変勉強になっています！</p>
+      <p class="impression">おもしろい．</p>
+      <p class="impression">実践がさくっとした例でありがたいです</p>
+      <p class="impression">Interesting and unique approach!</p>
+      <p class="impression">面白い試みです。</p>
+      <p class="impression">THE 初めてのプルリク。</p>
+      <p class="impression">実際に手を動かしながら学べるのはありがたいです。</p>
+      <p class="impression">手を動かして確認できるので面白い！</p>
+      <p class="impression">Githubにアカウントを作ってみたものの使い方がイマイチわかってなかったのですが、この本を読むことで理解が進みました。</p>
+      <p class="impression">実践してみました。</p>
+      <p class="impression">全て完璧に理解できたわけではありませんが、なんとかこの章まで来ました。また読み直してみます</p>
+      <p class="impression">実際にPRできるのはうれしいです</p>
+      <p class="impression">お試しできるのよいですね</p>
+      <p class="impression">大変わかりやすく、実践的で勉強になります。</p>
+      <p class="impression">すばらしいです。</p>
+      <p class="impression">勉強になります。いい本をありがとうございます！</p>
+      <p class="impression">勉強になります！</p>
+      <p class="impression">百聞は一見にしかず。百見は一触にしかず。</p>
+      <p class="impression">手を動かすのが一番</p>
+      <p class="impression">とても読みやすいです。ソーシャルコーディング、なんだかワクワクしますね</p>
+      <p class="impression">わかりやすく勉強になっています。良書です。</p>
+      <p class="impression">pull request練習２回目です。おねがいします。</p>
+      <p class="impression">とてもわかりやすいです。</p>
+      <p class="impression">学習環境を用意していただき、ありがとうございます。</p>
+      <p class="impression">GitHubの導入にとても役に立ちました。ありがとうございます。</p>
+      <p class="impression">単純にコマンドや機能の解説だけでなく、OSS開発の文化について学べたのが良かったと思います。(<a
+          href="https://github.com/ak1t0">@honeniq</a>)</p>
+      <p class="impression">実際に試してみれるのがありがたいです。</p>
+      <p class="impression">プルリクエストについてなかなか理解できなかったのですが、実践することで多少わかってきました。</p>
+      <p class="impression">本書を活用してGitHubの使い方を勉強しております。</p>
+      <p class="impression">実際に試せる環境があってすごく分かりやすかったです。</p>
+      <p class="impression">手を動かして、自分の理解を確認しつつ学習を進めることができました。良い本に出会えて嬉しいです！</p>
+      <p class="impression">電子書籍待っていました!!!</p>
+      <p class="impression">非常に勉強になります！</p>
+      <p class="impression">pull requestの実践です</p>
+      <p class="impression">良書です！まずは触って慣れろ！ですね。</p>
+      <p class="impression">やっと第6章まできました</p>
+      <p class="impression">とても参考になりました</p>
+      <p class="impression">hakoeve</p>
+      <p class="impression">Pull Request送信する機会を提供いただきありがとうございます！</p>
+      <p class="impression">多くのことが理解できました。丁寧な本ですね。ありがとうございます。</p>
+      <p class="impression">SubversionからGitへ環境を移行する事を思案中...参考のために購入させていただきました。現在勉強中。手を動かしながら確認しております。</p>
+      <p class="impression">開発現場デビューの前に使わせていただきました。どうもありがとうございます。</p>
+      <p class="impression">とても参考になりました。ありがとうございます。</p>
+      <p class="impression">手を動かして学べる実践入門の名にふさわしい良書ですね。</p>
+      <p class="impression">PR初挑戦です。</p>
+      <p class="impression">このように実際にforkしてcloneしてworkブランチ作って変更をしてPullRequestして、GitHubの楽しさがわかりました！</p>
+      <p class="impression">実際にやってみることで非常に勉強になりました。ありがとうございます！</p>
+      <p class="impression">8月頃本を読んだだけでは良くわからなかったのですが、その後gitを勉強したところ、わかるようになりました。やはりgitを知っていることが前提ですね</p>
+      <p class="impression">GitHubの勉強にとても助かりました。ありがとうございます。</p>
+      <p class="impression">とっても勉強になります。この知識を生かせるように精進します。(<a href="https://github.com/momosolo">@momosolo</a>)</p>
+      <p class="impression">2015/01/30 pull request</p>
+      <p class="impression">プルリクを実際に手を動かして試せるのは非常に勉強になりました。ありがとうございます！</p>
+      <p class="impression">GitHubとGitの理解が深められました。</p>
+      <p class="impression">なるほど！</p>
+      <p class="impression">表面上理解するには良い？？</p>
+      <p class="impression">はじめての Pull Request !!!</p>
+      <p class="impression">おもしろい！:-D</p>
+      <p class="impression">Hello GitHub world!!(<a href="https://github.com/ohbarye">@ohbarye</a>)</p>
+      <p class="impression">GitHubを使いこなせるようになるため、本書で勉強しています！(@tkitamoto)</p>
+      <p class="impression">手を動かして試すことで、すんなりと理解できました。ありがとうございます！</p>
+      <p class="impression">良い</p>
+      <p class="impression">本書を参考に初めてのPull Requestを送ります。練習の機会を与えてくださりありがとうございます。</p>
+      <p class="impression">今までは、Subversionを使ってましたが、これでGitに移行できそうです。</p>
+      <p class="impression">githubを覚える良い機会となりました。ありがとうございます。</p>
+      <p class="impression">初ＰＲ</p>
+      <p class="impression">やりました</p>
+      <p class="impression">何となく使っていましたが、体系的に学び直す事が出来ました。</p>
+      <p class="impression">実際に手を動かしてpull requestを送れるのは素晴らしい試みと思います！</p>
+      <p class="impression">初PRします。ありがとうございます！ (@aoshimanoa)</p>
+      <p class="impression">My first PR!</p>
+      <p class="impression">６章まで読んでブランチの使い方がよくわかりました。このまま読み進めて Pull Request の使い方も理解するつもりです。</p>
+      <p class="impression">初めてのpull request(@mojyakou)</p>
+      <p class="impression">初めてのRR（@techimob）！</p>
+      <p class="impression">実際に手を動かして Pull Request でき、良い経験となりました ;-) </p>
+      <p class="impression">Gitがわからない人でもGitHubを利用できるようになるのでいいと思います</p>
+      <p class="impression">初PR!</p>
+      <p class="impression">会社へのソーシャルコーディング布教活動の基盤が出来ました！</p>
+      <p class="impression">実際に手を動かして学習できるのでとても理解しやすいです。ありがとうございます。(@hideo-works)</p>
+      <p class="impression">WindowsでのGitインストール・初期設定から説明して頂き、だいぶ助かりました！</p>
+      <p class="impression">PRはしきいが高かったので実践できるのすごく助かります！(<a href="https://github.com/nanakira">@nanakira</a>)</p>
+      <p class="impression">実際に手を動かす環境を提供いただきましてありがとうございます。</p>
+      <p class="impression">楽しんでます！！</p>
+      <p class="impression">とても参考になります。マスターするぞ！</p>
+      <p class="impression">書籍から飛び出し、実際の GitHub を使ってもらう試み、素晴らしいです！！。(@naotawool)</p>
+      <p class="impression">何となく使っていたものを体系的に理解することができました。ありがとうございます！</p>
+      <p class="impression">初PR！(@fakiyer)</p>
+      <p class="impression">これからどんどんソーシャルコーディングしていきたい！</p>
+      <p class="impression">面白いっす</p>
+      <p class="impression">devsumiのプレゼン切っ掛けで買って、最近になってようやく読み始めました。面白いです！</p>
+      <p class="impression">仕事でGitHubを使うので勉強してます。</p>
+      <p class="impression">実際に Pull Request を試せるのがとても良いですね！手を動かしながら学習できたので大変ためになりました。</p>
+      <p class="impression">ありがとうございます。手を動かして勉強するのは大切ですね。理解できていないところが浮き彫りになります。 (@HIROCASTER)</p>
+      <p class="impression">とてもわかりやすい本ですね。練習用環境があることもありがたいです。</p>
+      <p class="impression">結果的に買ってよかった本でした。今後も活用させていただきます。</p>
+      <p class="impression">実際にPull Request可能な環境があり，自信がつく</p>
+      <p class="impression">手を動かして学習できる仕組み素晴らしいですね。ありがとうございます。</p>
+      <p class="impression">すばらしい本です</p>
+      <p class="impression">fantastic!</p>
+      <p class="impression">目指せソフトウェアエンジニア</p>
+      <p class="impression">勉強になり、ありがとうございました。(@seisonshi)</p>
+      <p class="impression">初めてのプルリクエスト！実際できるっていいですね！</p>
+      <p class="impression">手を動かせる環境を用意して頂き、ありがとうございます。</p>
+      <p class="impression">実際に手を動かして Pull Request でき、分かりやすいです。</p>
+      <p class="impression">わかりやすいと思いました。しっかり読み込んでいきたいです。</p>
+      <p class="impression">もう人に聞けないのでこの本は助かります♪</p>
+      <p class="impression">手を動かしながら学ぶことで早く、確実に理解できたと思います。ありがとうございました。(@tomoyag)</p>
+      <p class="impression">GitHubの基本が手を動かしながら楽しく学ぶことができました。ありがとうございます。</p>
+      <p class="impression">「git+GitHub」手習い中。たぶんここに書き込んだ人で私が最高齢。IT業界も3世代引き継いで一人前。まだまだがんばる</p>
+      <p class="impression">PullRequestを実践できるのが良い</p>
+      <p class="impression">Pull Request 万歳！</p>
+      <p class="impression">Pull Request 勉強中。(@to9a)</p>
+      <p class="impression">Pull Request プルリクエスト！！</p>
+      <p class="impression">First Pull Request</p>
+      <p class="impression">実際にPull Request可能な環境があり，自信がつく</p>
+      <p class="impression">手を動かしながらなので楽しく理解が進みます</p>
+      <p class="impression">プルリクエストなう</p>
+      <p class="impression">Pull Request がんばります</p>
+      <p class="impression">Pull Request こんにちは</p>
+      <p class="impression">Pull Request 这本书读着很有趣</p>
+      <p class="impression">Эта книга очень хорошо! @yasufumic PRが試せるのが嬉しかったです。スキルも勇気もまだ足りないので。 </p>
+      <p class="impression">★☆★☆ 2015/8時点でbranchの内容が書籍と比較して増えましたね。今回First Pull Requestの機会をいただき感謝しています。★☆★☆</p>
+      <p class="impression">次のプロジェクトではぜひGitHubを使いたいです</p>
+      <p class="impression">初プルリク 気軽に試すことができ、良かったです！</p>
+      <p class="impression">Git&amp;Githubの勉強に大変役に立ちました！(@kimacho)</p>
+      <p class="impression">ありがとうございます！</p>
+      <p class="impression">この本のおかげで私にもPullRequestができました。ありがとうございます。</p>
+      <p class="impression">GitHubがわかってきました(@mosugi)</p>
+      <p class="impression">Pull Request Hello</p>
+      <p class="impression">わかりやすかったです</p>
+      <p class="impression">こんなにたくさんみなさんからのコメントが！今度オープンソースのRyuに勇気を出して機能を送ってみます。@alyosha1879</p>
+      <p class="impression">実践的で大変わかり易いです。</p>
+      <p class="impression">大学生です。自分の研究室にはGitHubを使う週間がないので私が布教していきます！</p>
+      <p class="impression">初のPull Requestです。届いてますか！！！！()</p>
+      <p class="impression">初のPull Requestです。届いてますか！！！！(追加)</p>
+      <p class="impression">初のPull Requestです。届いてますか！！！！(追加その２)</p>
+      <p class="impression">勉強になりました。ありがとうございました。(@shuuchen)</p>
+      <p class="impression">とても勉強になる本でした。</p>
+      <p class="impression">これ面白い！(@euglena1215)</p>
+      <p class="impression">Pull Request 勉強になります！</p>
+      <p class="impression">はじめてのぷるりく</p>
+      <p class="impression">素晴らしい試みです。感謝！Git、業務でも使えるようにしたい！（使えるとは言っていない）</p>
+      <p class="impression">貴重なプルリクをありがとうございます！</p>
+      <p class="impression">Pull Requestテスト！ 勉強になります！^-^</p>
+      <p class="impression">もう一つテスト</p>
+      <p class="impression">祝 Pull Request</p>
+      <p class="impression">勉強中!</p>
+      <p class="impression">本書の編集を担当させていただきました。以前にPRしたのですがテスト段階で消してしまったようなので再度PRしました(<a
+          href="https://github.com/d-ikeda">@d-ikeda</a>)</p>
+      <p class="impression">NiceなBookです。</p>
+      <p class="impression">べ、勉強中なんだからね！</p>
+      <p class="impression">Pull Request 尝试。</p>
+      <p class="impression">とても分かりやすくて参考になりました！(@ko31)</p>
+      <p class="impression">こうした練習の場を提供して頂き、ありがとうございます！著者の方に感謝</p>
+      <p class="impression">GitLabに慣れていたのですが、GitHubの勉強中です。はじめてのPRです。(@nwebcraft)</p>
+      <p class="impression">大変わかりやすくて楽しいです☆</p>
+      <p class="impression">Pull Requestの使い方がわからなかったので勉強になる</p>
+      <p class="impression">Githubの勉強に大変役立っています!(@maestro_L_jp)</p>
+      <p class="impression">お世話になってます。</p>
+      <p class="impression">Great job.</p>
+      <p class="impression"> 読みやすくて楽しく覚えられます!</p>
+      <p class="impression">Great job2.</p>
+      <p class="impression">GitHub studying!</p>
+      <p class="impression">初めてのPull Request！！</p>
+      <p class="impression">Schooを見て本を買いました！サイコーです！だけどGitHubが大幅にリニューアルされてるので、最新版よろしくです！</p>
+      <p class="impression">実際に操作しながら覚えられるところがいい本だと思います。</p>
+      <p class="impression">めっちゃ分かりやすい！(<a href="https://github.com/ksukejs">@ksukejs</a>)</p>
+      <p class="impression">変更２＠2016-02-08</p>
+      <p class="impression">初めてプルリクしてみる。</p>
+      <p class="impression">First Pull Request @2016-03-14</p>
+      <p class="impression">本の通りやってみたのです( ´ ▽ ` )ﾉ</p>
+      <p class="impression">実際にやってみると感触つかめました!!ありがとうございます</p>
+      <p class="impression">実践形式でとてもためになります。何度か繰り返してマスターを目指します！(<a href="https://github.com/noobow34">@noobow34</a>)
+        2016/3/21 16:40</p>
+      <p class="impression">WEB+DB PRESSでもプルリクさせてもらいました。再度勉強しなおしています。 2016/3/21 20:02</p>
+      <p class="impression">初めてのPull Request!!GitHubを使いこなせるよう勉強してます！</p>
+      <p class="impression">しばらく積読していてすみませんでした。m(_ _)m</p>
+      <p class="impression">PR TEST</p>
+      <p class="impression">勉強中です！基本的なコマンド操作から画面上の機能説明まで、丁寧に書かれており理解しやすいです</p>
+      <p class="impression">すごくわかりやすいです。業務に活かしたいと思います。</p>
+      <p class="impression">pull request のテストです。April 19.</p>
+      <p class="impression">えにくすは、ぷるぷる　りくえすとを唱えた。</p>
+      <p class="impression">pull request !!</p>
+      <p class="impression">Catch Up Pull Request</p>
+      <p class="impression">えにくすは、ぷるぷる　りくえすとを唱えるつもりだ</p>
+      <p class="impression">プルリク送れるリポジトリまで用意してもらえるとは、至れり尽くせりですね</p>
+      <p class="impression">今までSVNを使っていたので新鮮です。</p>
+      <p class="impression">とても丁寧に書かれていたので初めての方でも気負うことなく取り組めると思いました。</p>
+      <p class="impression">演習が豊富で理解が進みます。素晴らしい本をありがとうございます。(@matzryo)</p>
+      <p class="impression">実際に手を動かせるのでとてもわかりやすいです！ありがとうございます！</p>
+      <p class="impression">電子書籍で出して欲しかった。</p>
+      <p class="impression">はじめてPull request をテストします。ま。</p>
+      <p class="impression">手を動かしながら学べるので良いと思います。</p>
+      <p class="impression">初めての Pull Request です。こんな風にやるんですね。わかりやすいです。</p>
+      <p class="impression"> 読みやすくいです!n</p>
+      <p class="impression">外国人でも読みやすいです。</p>
+      <p class="impression">pull requestのテストです。</p>
+      <p class="impression">実践できるのは、かなり助かります。ありがとうございます。</p>
+      <p class="impression">とってもわかりやすいです。勉強になります。(@yukihirop)</p>
+      <p class="impression">遅まきながらGitHub勉強始めました</p>
+      <p class="impression">ぷるりヽ(｀▽´)/</p>
+      <p class="impression">pull request test</p>
+      <p class="impression">This is good book.</p>
+      <p class="impression">みんなのプルリク</p>
+      <p class="impression">実際に触って見れるのは嬉しいです。</p>
+      <p class="impression">初めてのPull Request...</p>
+      <p class="impression">初めてのPull Request part2 </p>
+      <p class="impression">大変参考になります！ </p>
+      <p class="impression">実践できると、理解しやすいです </p>
+      <p class="impression">ぷるりく</p>
+      <p class="impression">流れは理解できた。使いこなすには、やっぱり実務で使って慣れるしかなさそう。(@Kei178) </p>
+      <p class="impression">基礎やり直し中です。とても勉強になります </p>
+      <p class="impression">ふっふっふ、初のプルリクだ。何気にうれしい </p>
+      <p class="impression">明日からバンバンプルリクエストするぞ。明日からバンバンプルリクエストするぞ。明日からバンバンプルリクエストするぞ。</p>
+      <p class="impression">遅れてきたプルリクエスト</p>
+      <p class="impression">すごく実践的でわくわくします。早く本を開けば良かったです。</p>
+      <p class="impression">プルリクエストの実演が出来て勉強になりました。</p>
+      <p class="impression">My first pull request! </p>
+      <p class="impression">gitとpull requestを実践して学ぶことができます。</p>
+      <p class="impression">Git pull request! </p>
+      <p class="impression">試す場を与えて下さり、ありがとうございます。</p>
+      <p class="impression">非常にわかりやすいですし、PullRequest環境もあり、助かりました。</p>
+      <p class="impression">&#10052;&#10052; Hello GitHub world! &#10052;&#10052;</p>
+      <p class="impression">初めてのPull Requestです。</p>
+      <p class="impression">いつも楽しく読んでいます。 (@kusati)</p>
+      <p class="impression">あずにゃん「プルリクやってやるです！」</p>
+      <p class="impression">興味はあるものの、使い方がわからず困っていました。この本のおかげでとても助かっています。</p>
+      <p class="impression">本サイトの作成ありがとうございます! なかった場合は、ＰＲできなかったです。</p>
+      <p class="impression">Pull request (-_-)b </p>
+      <p class="impression">初めてのPull request </p>
+      <p class="impression">非常によく出来ている本だと思います。ありがとうございます！ </p>
+      <p class="impression">初めてのpull requestです、素晴らしい機会をありがとう、感謝します。 (@eternity514) </p>
+      <p class="impression">これが…プルリクなのですね！めっちゃわかりやすい！</p>
+      <p class="impression">初プルリクエスト。どきどき。</p>
+      <p class="impression">はじめまして！こうやって実際に試せるのがとても良いです。</p>
+      <p class="impression">はじめまして。プルリクのテストができ、理解が深まりとても良いです。</p>
+      <p class="impression">残念ですが情報が古くなってしまいました。第5章UIの説明が現行にあいません。改訂版が必要です。</p>
+      <p class="impression">プルリクエストを実践させていただき、ありがとうございます。やはり、実践に勝るものはありませんね。</p>
+      <p class="impression">わかりやすくてためになりました。</p>
+      <p class="impression">手を動かしながら勉強するのは楽しいです。</p>
+      <p class="impression">Hello GitHub :D</p>
+      <p class="impression">今更ですがgithubちゃんと使おうと思って本書を手に取りました！</p>
+      <p class="impression">The New Beginner of GitHub!!</p>
+      <p class="impression">実践的に学べるのでありがたいです。(<a href="https://github.com/hiromaki">@hiromaki</a>)</p>
+      <p class="impression">この書籍を軸に習熟に励もうと思います。ありがとうございます。</p>
+      <p class="impression">なるほど。よく分かりました。</p>
+      <p class="impression">本書のおかげで敷居が高く感じていたGitHubを使いこなせそうです。</p>
+      <p class="impression">Hello World!<br>
+        Pull Request初体験です！まるで一つのコミュニティのように躍動している様子が納得でき、勉強になりました。本書に感謝いたします。(<a
+          href="https://github.com/SocietalTrends">@SocietalTrends</a>)</p>
+      <p class="impression">とても分かりやすいです！勉強になります。</p>
+      <p class="impression">非常に勉強になりました。</p>
+      <p class="impression">一部情報の古い箇所もありましたが(githubUI等)、わかりやすく学習させていただきました！</p>
+      <p class="impression">初めてのプルリク。とても読みやすい書籍でした。</p>
+      <p class="impression">実際にいろいろ試せて分かりやすかったです．良い本ですね．</p>
+      <p class="impression">はじめてのプルリクだー。</p>
+      <p class="impression">この本は、実際に手を動かして勉強できるので、とてもわかりやすいです。</p>
+      <p class="impression">出来てるかな？？</p>
+      <p class="impression">習うより慣れろですね！</p>
+      <p class="impression">初PR!!</p>
+      <p class="impression">手を動かしながら体験できるので、イメージが付きやすく楽しみながら学習できてます！</p>
+      <p class="impression">わかりやすいです。もっと早く読めば良かったです。</p>
+      <p class="impression">とても分かりやすいです!これからGitHubをどんどん活用していきたいと思います。</p>
+      <p class="impression">引き続き勉強させていただきます。よろしくお願いいたします。</p>
+      <p class="impression">初めてのPull Requestを送る</p>
+      <p class="impression">このような試みすばらしいと思います。第５章にチュートリアル的な物があるとGitHubの理解がより深まりそうです。</p>
+      <p class="impression"> 今まで知らなかったTipsなども学びなおすことができ、大変参考になりました。Thank you!! </p>
+      <p class="impression">初めてのPull Requestです。</p>
+      <p class="impression">手を動かして学べるのが良かったです。レイアウトがかなり変わったため、第5章のリニューアルを期待します。</p>
+      <P class="impression">とても分かりやすかったです。</p>
+      <P class="impression">Awesome!</p>
+      <P class="impression">かりやすかったです。</p>
+      <P class="impression">PRしてみる。</p>
+      <p class="impression">ありがとうございます！！</p>
+      <p class="impression">勉強になります〜</p>
+      <p class="impression">色々な解説などを読んできましたが、やはり手を動かすのか一番ですね。体験の場を提供していただき本当にありがとうございます。</p>
+      <p class="impression">git githubがよく理解できました</p>
+      <p class="impression">早く実践で使えるようにならねば...</p>
+      <p class="impression">非常にわかりやすいです</p>
+      <p class="impression">本書の名の通り実践的で勉強になります。</p>
+      <p class="impression">面白いです！</p>
+      <p class="impression">実践しながら学べるのはいいですね</p>
+      <p class="impression">人生最初のプルリクエスト！</p>
+      <p class="impression">手を動かしつつ、一連の流れをつかむのにちょうどよし</p>
+      <p class="impression">初めてのgit実践、手を動かしながら頑張ってます！！じゃけぇ〜</p>
+      <p class="impression">体系的に学べて勉強になりました。</p>
+      <p class="impression">自分のリポジトリに fork せずに直接 clone して push しようとしてハマってました…。他人のリポジトリいじれたらまずいに決まってるじゃないか…。</p>
+      <p class="impression">できたーーーー</p>
+      <p class="impression">めっちゃわかりやすいです！</p>
+      <p class="impression">ありがとうございます。</p>
+      <P class="impression">実践的でとても分かりやすい書籍だと思います。</p>
+      <P class="impression">実際にPull Requestを送れる環境があるのが、すごくありがたいです。</p>
+      <P class="impression">ネット上で調べながら仕事で使いましたが、やはり本で順を追って説明をしてもらえると安心して読み進められます。</p>
+      <P class="impression">いつも楽しく読んでいます。</p>
+      <P class="impression">日本語教材助かります。</p>
+      <p class="impression">初めてのプルリクをこのように実践できて大変ありがたいです！</p>
+      <p class="impression"> コードの管理が楽になりました。　</p>
+      <p class="impression">現場でgithubを導入するにあたり、とても参考になりました</p>
+      <p class="impression">奥が深い...</p>
+      <p class="impression">It is exciting experience</p>
+      <p class="impression">実際に手を動かしながらだと、覚えが早くて助かります！</p>
+      <p class="impression">This book is excellent</p>
+      <p class="impression">my first pull request</p>
+      <p class="impression">初めてのPull Requestです。勉強になります。</p>
+      <p class="impression"> My first pull request. Thank you. </p>
+      <p class="impression"> Now studying.Thank you.</p>
+      <p class="impression">ありがとう！Git！ありがとう！Git！</p>
+      <p class="impression">今まであやふやだったことが体系的に学べてとても参考になりました。また手を動かして実践できるのも良かったです。(<a
+          href="https://github.com/tadaken3">@tadaken3</a>)</p>
+      <p class="impression">すごく勉強になります。助かります！</p>
+      <p class="impression">Thank you. @noriyukinakaoka</p>
+      <p class="impression">勉強になります。ありがとう。</p>
+      <p class="impression">初めの一歩。０と１は大きく違う。ありがとう。</p>
+      <p class="impression">ようやく時間ができて試せてます、勉強になります。</p>
+      <p class="impression">毎日git触って勉強します！ありがとうございます！</p>
+      <p class="impression">頑張ります！ありがとうございます！</p>
+      <p class="impression">いつも楽しく読んでいます。</p>
+      <p class="impression">猛勉強中</p>
+      <p class="impression">Chinese in Japan sending First Pull Request with English.LOL Fin</p>
+      <p class="impression">ツールの使い方を勉強するにはツールを操作しながら勉強するのが印象が深いと思います。助かります。</p>
+      <p class="impression">大変勉強になりました！</p>
+      <p class="impression">勉強中</p>
+      <p class="impression">Git is wonderfull!!</p>
+      <p class="impression">非常に参考になりました！感謝！！</p>
+      <p class="impression">test</p>
+      <p class="impression">頑張って勉強してます！</p>
+      <p class="impression">一番下に追加すればいいのですね？Clone/add/commit/push/pull 等は一人で練習できますが、Pull Request
+        は少々ハードルが高いので良いアイデアだと思います</p>
+      <p class="impression">P131のブラウザで表示して... という部分は url の入れ方 file:// の記述があった方がよいかと思います</p>
+      <p class="impression">大変勉強になっております。今後期待することは、現在の仕様に合わせた改訂です。</p>
+      <p class="impression">これから開発頑張ります。</p>
+      <p class="impression">20170610 菅原参上. 頑張ります</p>
+      <p class="impression">GitHub 最高！</p>
+      <p class="impression">20170612 Chinese student of CQUPT learn</p>
+      <p class="impression">使いこなせるように頑張ります！</p>
+      <p class="impression">いつも楽しく読んでいます。@ya</p>
+      <p class="impression"> 这本书读者很有趣. (@yangvipguang) </p>
+      <p class="impression">こうして実際にプルリクエストの練習をする機会を提供していただけるのは、入門書として大変素晴らしいことだと思います。ありがとうございました。</p>
+      <p class="impression">わかりやすくてたすかります。@ya</p>
+      <p class="impression">This book is very good. This is my first PullRequest!</p>
+      <p class="impression">解説がとてもわかりやすいです。そして実践練習を積めるこの工夫・・まさにgithubのメリットを存分に活かしていますね。勉強になります。</p>
+      <p class="impression">仕事で使うので試させていただきました。ありがとうございます！</p>
+      <p class="impression">手軽にpull requestの練習ができます。</p>
+      <p class="impression">Git・Githubの基本的な使い方や、pull
+        requestについて分かり易く解説・実践ができる良いテキストです。このような実技向けリポジトリまで用意して頂いて、ありがとうございます。</p>
+      <p class="impression">
+        独学のため購入しました。細かい機能についてまで書いてあり大変参考になります。本書のGitHub画面と今使っているGitHubの画面が異なっている様な気がしますが、versionが変わったのでしょうか？(eclipseでgit機能を使いたいと思っているのであえてeclipseから更新することにしています。)
+      </p>
+      <p class="impression">ありがたや、ありがたや(-人-)</p>
+      <p class="impression">I want to express my appreciation for writing this book.(@iskwa)</p>
+      <p class="impression">GitHub thank you</p>
+      <p class="impression">初めての Pull Request です。ありがとうございます。</p>
+      <p class="impression">It's a nice book. </p>
+      <p class="impression">楽しんで勉強してます</p>
+      <p class="impression">( ^ω^ )</p>
+      <p class="impression">初心者にとってハードルの高いPull Requestを実行できる環境を用意して頂き感謝しています。</p>
+      <p class="impression">(^ー^)b</p>
+      <p class="impression">Pull Requestを初めてやりました。わかりやすいです！！</p>
+      <p class="impression">初めてのPull Requestです。(@junjunVC)</p>
+      <p class="impression">Forkしたリポジトリをupstreamに追従させてからのPull Requestです。実践型の良い本をありがとうございます。</p>
+      <p class="impression">簡単です。初プルリクエスト。work branch</p>
+      <p class="impression">(・ω・)ノ</p>
+      <p class="impression">初めてのプルリク(^^♪</p>
+      <p class="impression">おっおっお。いいね！</p>
+      <p class="impression">プルリクのかんたんな実践例がgit開発の理解にとても役立っています。ありがとうございます。</p>
+      <p class="impression">pull request出来ているでしょうか、実践できて面白い本です、ありがとうございます。</p>
+      <p class="impression">I'd be glad to merge this PR!!</p>
+      <p class="impression"> 初めてのプルリク！！実践できるので楽しいです!!</p>
+      <p class="impression">初めてのプルリク、ドキドキ</p>
+      <p class="impression">実践できると覚えやすいですね</p>
+      <p class="impression">この本のおかげでgithubデビューできました！</p>
+      <p class="impression">最新の状況に則した説明があったら勉強しやすそうだなと思いました。ぜひ改訂版を。</p>
+      <p class="impression">20171009!!!</p>
+      <p class="impression">わかりやすい本だと思います</p>
+      <p class="impression">ありがとうございます。楽しいですね。</p>
+      <p class="impression">実際の現場で使う可能性が高いのでGitHubの勉強を始めました。本はすごく分かりやすいです。GitHubデビューです。</p>
+      <p class="impression">gitは取っ付きにくくわかりにくかったのですが、本書はとても親切でわかりやすい本でした。現場でもgitが使えるようになりますように</p>
+      <p class="impression">本の内容がとても分かりやすく、助かっています。</p>
+      <p class="impression">いやしかし、この本はわかりやすくて素晴らしいです。３年前の本で少し情報が古い部分もありがすがとてもgithubを理解するのに助かりました。</p>
+      <p class="impression">わかりやすくGitHubへの理解が深まりました。</p>
+      <p class="impression">実際に手を動かしながらなのでとても分かりやすいです！</p>
+      <p class="impression">forkしてPRを出す練習をさせてくれてありがたいです！</p>
+      <p class="impression">初めてのPullRequest。まさにプルプルしながらのリクエストってか？！ガハハ</p>
+      <p class="impression">実際に手を動かしながらなのでとても分かりやすいです！</p>
+      <p class="impression">forkしてPRを出す練習をさせてくれてありがたいです！</p>
+      <p class="impression">面白いほどよくわかるgit入門書です</p>
+      <p class="impression">とても参考になりましたー。</p>
+      <p class="impression">勉強になります。こういう実践環境を用意頂けているのもありがたいです。</p>
+      <p class="impression">実践を通して実際に理解できる事が素晴らしいです。</p>
+      <p class="impression">Thank you for giving me the opportunity to pull request!</p>
+      <p class="impression">初めてのGithubです!共同でアプリなどを開発していくために始めました！</p>
+      <p class="impression">この実践を通してgitの理解が深まります。2017/11/26</p>
+      <p class="impression">もやもやしていたGitの世界がすっきりしてきました！</p>
+      <p class="impression">gitの良い入門書です！</p>
+      <p class="impression">面白い試みですねー。こういう企画求めていました。</p>
+      <p class="impression">GitHub練習中、pull reqestが練習できるのは勉強になります</p>
+      <p class="impression">PRを体験させてくれる良書です。これからOSSにたくさん貢献していきたいです。</p>
+      <p class="impression">2018年の年始休みに勉強しています。とても分かりやすいです！！(@h-shima)</p>
+      <p class="impression">なかなか一人では試しづらいpull requestもこうして試せるので勉強になります。</p>
+      <p class="impression">pull reqを提出できるのはすばらしい!</p>
+      <p class="impression">勉強中です．</p>
+      <p class="impression">初めは難しかったですが段々GitHubが分かるようになってきました！</p>
+      <p class="impression">とてもわかりやすく、参考になりました！！</p>
+      <p class="impression">なかなか一人では試しづらいpull requestもこうして試せるので勉強になります。</p>
+      <p class="impression">わかりやすく、サクサク読み進めています。</p>
+      <p class="impression">勉強になりました。</p>
+      <p class="impression">４章、６章と動作確認。３年前の本ですが、問題なくgitの使い方を学習できました。2018/01/11</p>
+      <p class="impression">わかりやすくてとても良い入門書だと思います。</p>
+      <p class="impression">Gitむずい！こういう本があるのはありがたい(@hidemi)</p>
+      <p class="impression">なんとなく理解していたGitの知識がすごく整理されました。</p>
+      <p class="impression">ありがとうございます</p>
+      <p class="impression">GitHub勉強中</p>
+      <p class="impression">勉強になりました</p>
+      <p class="impression">Github practice now</p>
+      <p class="impression">
+        とてもわかりやすい書籍です。実際に手を動かしながらGitHubについて学べるので、とても楽しく学習することができました。実際の開発でも利用できるようにさらに理解を深めていきたいと思います！
+      </p>
+      <p class="impression">手を動かして学べるのでわかりやすいです。</p>
+      <p class="impression">Thank you for the chance to pull request :)</p>
+      <p class="impression">新現場でGitを使うことになり、この本を買いました！とてもわかりやすくて非常に助かりました！！</p>
+      <p class="impression">仕事でGitHubを使うとの事で、初めて勉強をしています。分かりやすく、とても助かります。感謝です。</p>
+      <p class="impression">わかりやすい本で感謝です。</p>
+      <p class="impression">2019/4/22</p>
+      <p class="impression"> 2019/4/16 初めてのプルリクです。</p>
+      <p class="impression"> 初めてのプルリクです。</p>
+      <p class="impression">わかりやすくて重宝しています。</p>
+      <p class="impression">非常に役にたっています。2019/03/18</p>
+      <p class="impression">Gitでかいはつするぞい</p>
+      <p class="impression">楽しいです（@fucchii)</p>
+      <p class="impression">2019/3/21 4月からの入社に向けて勉強中です</p>
+      <p class="impression">2019おるのかな?gitすごい、楽しい</p>
+      <p class="impression">GitとGitHubの基本が理解できました。2019/3</p>
+      <p class="impression">ありがとうございます！勉強中です</p>
+      <p class="impression">再学習をしています</p>
+      <p class="impression">2019/4/16</p>
+      <p class="impression">実際に手を動かしながら進められるのでとても勉強になります。</p>
+      <p class="impression">とてもわかりやすい！！！</p>
+      <p class="impression">ありがとうございます。感謝します。(2019/6/5)</p>
+      <p class="impression">勉強になりました。</p>
+      <p class="impression">2019/6/25 Pull Request</p>
+      <p class="impression">とてもわかりやすい！！！</p>
+      <p class="impression">勉強させて頂きます。by tk</p>
+      <p class="impression">プルリクエスト楽しいですね。最高の本でした。</p>
+      <p class="impression">ぷるぷるぷるりくえすと。</p>
+      <p class="impression">20019/07/20 プルリクエストを試す環境が提供されていてとても助かります。</p>
+      <p class="impression">フォークしてクローンしてトピックブランチ作ってコミットしてプルリクエスト。</p>
+      <p class="impression">ぷるぷるぷるりくえすと。</p>
+      <p class="impression">GITHUBがんばるぞ</p>
+      <p class="impression">GitHubたのしい</p>
+      <p class="impression">再挑戦です。</p>
+      <p class="impression">2019/08/17 Pull Request</p>
+      <p class="impression">勉強させていただき、ありがとうございます。</p>
+      <p class="impression">すぐに仕事で使えます。助かりました。</p>
+      <p class="impression">GitHubってすごいですね！2019/10/17</p>
+      <p class="impression">安心して練習できるのでありがたいです。</p>
+      <p class="impression">2019/10/21 Pull Request</p>
+      <p class="impression">2019/10/24 Pull Request</p>
+      <p class="impression">普段SVNを使っている身からすると新鮮で楽しいですね。</p>
+      <p class="impression">初プルリクです</p>
+      <p class="impression">分かりやすいです！</p>
+      <p class="impression">SVNからの脱却！楽しくなりそうだ。</p>
+      <p class="impression">わかりやすい！！！！</p>
+      <p class="impression">令和になってもお世話になってます</p>
+      <p class="impression">とてもわかりやすいです。</p>
+      <p class="impression">ありがとうございます</p>
+      <p class="impression">勉強になりました</p>
+      <p class="impression">Git最高！ @cantyan30</p>
+      <p class="impression">PRの練習ができてありがたいです。</p>
+      <p class="impression">体系的に勉強しなおしてます！わかりやすいです！</p>
+      <p class="impression">SVNからGitに移行のため勉強中です</p>
+      <p class="impression">Very Goooooood!</p>
+      <p class="impression">わかりやすくてとても良いです。</p>
+      <p class="impression">Pull Request勉強になります、大変助かります！</p>
+      <p class="impression">世界が広がる！40歳 2021/04/29</p>
+      <p class="impression">勉強になりました。ありがとうございます。</p>
+      <p class="impression">Very Goooooooooooood!</p>
+      <p class="impression">2021年現在、githubの仕様が少し変わっていますが、本書で十分理解が進んでいます</p>
+      <p class="impression">初プルリクです。ワクワクしています！！</p>
+      <p class="impression">Boot Camp #1頑張るぞ！</p>
+      <p class="impression">分かりやすいです。ありがとうございます！@spchan5/5</p>
+      <p class="impression">gitを学べば学ぶほどSubversionから脱却したくなりますね。</p>
+      <p class="impression">この本でようやくgithubの使い方を習得できそうです。ありがとうございます。</p>
+      <p class="impression">初pull request!実用的で分かりやすいです！</p>
+      <p class="impression">物凄く勉強になります！</p>
+      <p class="impression">勉強になります。改訂版も期待しています。</p>
+      <p class="impression">PR経験ができるのはありがたいです</p>
+      <p class="impression">非常に勉強になります!!今後OSS開発に貢献します!!</p>
+      <p class="impression">今更ながら勉強中。参考になります。</p>
+      <p class="impression">PR実践の場を提供いただき、ありがとうございます。こうして実際に手を動かせたことで、２回目以降のPRのハードルが下がったような気がします。</p>
+      <p class="impression">初めてのプルリク、分かりやすい！</p>
+      <p class="impression">はじめてのプルリク(2021/7/15)ありがとうございます．</p>
+      <p class="inpression">PullRequestの勉強ができてとても良い教材でした</p>
+      <p class="impression">PullRequestが実際に試せる機会ができて、ありがたいです。また、本の内容もとてもわかりやすくて、読みやすいです！</p>
+      <p class="impression">なーなーでgitを使ってきましたが、この本でだいぶ理解が追いつきました!</p>
+      <p class="impression">お世話になってます。2021年現在、サイトUIは本書と結構違いますが、Gitコマンドは問題なく使えます。まず個人開発で、本書をお供にガンガン使って慣れていこうと思います。(<a
+          href="https://github.com/lalaPlus" target=”_blank” rel=”noopener”>@lalaPlus</a>)</p>
+      <p class="impression">PRを体験するのは重要ですね</p>
+      <p class="impression">楽しく勉強させていただいております。この本が私の師匠です。2021/08/16</p>
+      <p class="impression">非常に実践的でわかりやすいです</p>
+      <p class="impression">このような形で参加できるなんて素晴らしいです</p>
+      <p class="impression">勉強になります。</p>
+      <p class="impression">一度学ぼうと思って難しかったですが，これなら簡単な気がする！</p>
+      <p class="impression">よくわかってないままGit Hubを使っていましたが、頭が整理されました。買ってよかったです。</p>
+      <p class="impression">ありがとうございます.</p>
+      <p class="impression">勉強になります！</p>
+      <p class="impression">勉強になります。</p>
+      <p class="impression">勉強になります!何度でも読み返します!!</p>
+      <p class="impression">勉強になりました！！！</p>
+      <p class="impression">とても勉強になります</p>
+      <p class="impression">実際に手を動かせる機会を提供していただき感謝します</p>
+      <p class="impression">実際に操作して学べてよいです</p>
+      <p class="impression">Very Very Good!</p>
+      <p class="impression">pullrequestが迫っていて勉強しています。</p>
+      <p class="impression">もっと早くこの本に出会いたかったです。</p>
+      <p class="impression">お試しPR</p>
+      <p class="impression">わかりやすくてとても読みやすいです。</p>
+      <p class="impression">Unityのバージョン管理のため勉強しています。実践的でとてもいい本だと感じます。2021/12/9</p>
+      <p class="impression">PR？プルリ？プルリク？デビュー!!ありがとうございます。</p>
+      <p class="impression">『GitHub実践入門』わかりやすいです。</p>
+      <p class="impression">I'm tring to study GitHUB. Nice book for learn ! Thank you</p>
+      <p class="impression">とてもわかり易く、ネットで情報を集めるより効率的に学習出来ました。</p>
+      <p class="impression">2022年になりました。なんとなく使ってたgithubについて知識を整理することができて感謝しています！</p>
+      <p class="impression">分かりやすいです！</p>
+      <p class="impression"> やっと取り組めました!</p>
+      <p class="impression"> 2022/02/06　画面の変更等、改訂版期待します。</p>
+      <p class="impression">メンテナンスされているみなさま、ありがとうございます。</p>
+      <p class="impression">自身のリポジトリで実験させてくれて、大変ありがたく思います。</p>
+      <p class="impression">ありがとうございます</p>
+      <p class="impression">とても勉強になります。何度も読み返してます。</p>
+      <p class="impression">初めてのPRです！大きな一歩を踏み出せました！</p>
+      <p class="impression">ありがとうございます。</p>
+      <p class="impression">こういう実践形式の練習があると、非常にわかりやすいです！</p>
+      <p class="impression">一歩踏み出すことが非常に大切ですね！実践形式はありがたいです。2022年3月時点問題ありません</p>
+      <p class="impression">とても楽しく読ませて頂いています。</p>
+      <p class="impression">なんとかPullRequestできました。</p>
+      <p class="impression">PullRequestの練習をさせてもらいます！</p>
+      <p class="impression">PullRequestの練習をさせてもらいます！ (2022年5月)</p>
+      <p class="impression">初めてのPullRequestです。実際に自分の手で動かせるのはいいですね。(2022年7月)</p>
+      <p class="impression">手を動かして学べるのは大変ありがたいです。</p>
+      <p class="impression">2022年になり、GithubのページのUIがだいぶ変更されていました。</p>
+      <p class="impression">とても勉強になってます</p>
+      <p class="impression">超分かりやすい本で助かってます！(2022年8月)</p>
+      <p class="impression">実際に手を動かしながら試せるので楽しい。分かりやすい。(2022年8月)</p>
+      <p class="impression">初めてPRを送ります。githubを使いこなせるようになりたいです。(2022年9月)</p>
+      <p class="impression">実際にプルリクエストもできてとても勉強になりました！！！！！(2022年12月)</p>
+      <p class="impression">Git・GitHubの復習に購入して読ませていただいています。ハンズオンで学習できるのが大変ありがたいです！（2023年5月）</p>
+      <p class="impression">実践的でとてもわかりやすいです！</p>
+      <p class="impression">勉強になります</p>
+      <p class="impression">体系的に学べてとても良い書籍だと感じました！！（2023/05/19）</p>
+      <p class="impression">私の戦闘力は53万です。</p>
+      <p class="impression">実際にプルリクエストを送れる場所があるなんて、非常に嬉しいです。良本。Twitter->@iQbu_より(2023年5月)</p>
+      <p class="impression">来年からエンジニアとして働き始めるので、この本に大変助けられています。ありがとうございます。(2023年5月)</p>
+      <p class="impression">実践する事でプルリクエストのイメージを付けることができました。</p>
+      <p class="impression">git,githubへの理解が深まりました！pullrequestが自在に出せるように頑張ります！</p>
+      <p class="impression">初めてのプルリクエストです！(2023年6月)</p>
+      <p class="impression">GitHubに早く慣れたい（2023年9月）</p>
+      <p class="impression">gitを通じて、過去数年間の多くの学習者の方々の足跡を見られるのも、何とも不思議な感覚です。このような場所、素晴らしい書籍を提供してくださりありがとうございます！！ 精進！！！
+        (2023/10) (<a href="https://github.com/paole21">@paole21</a>)</p>
+      <p class="impression">GitHubテスト（2023年10月27日）</p>
+      <p class="impression">面白くてとても助かっています。</p>
+      <p class="impression">わかりやすいです。githubのUIが変わっているので改訂版頑張って出してください！</p>
+      <p class="impression">はじめてのPull Request（2023年12月19日）</p>
+      <p class="impression">初めてのGithub。初めてのPull Request。実習できるのはすごいいいなと思いました。本も古くなってきたと思うので、新しいの出ないかなぁ</p>
+      <p>↑最新のコメント</p>
+      <h3>正誤情報など</h3>
+      <p>技術評論社Webサイト内の<a href="http://gihyo.jp/book/2014/978-4-7741-6366-6/support">本書のサポートページ</a>に掲載しています。</p>
+
+      <h3>問い合わせ</h3>
+      <p>本サイトについて問い合わせがありましたら<a href="http://hiroki.jp/contact/">こちら</a>からご連絡ください。</p>
+
+    </section>
+  </div>
+
+  <!-- FOOTER  -->
+  <div id="footer_wrap" class="outer">
+    <footer class="inner">
+      <p class="copyright">first-pr maintained by <a href="https://github.com/hirocaster">hirocaster</a></p>
+      <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+    </footer>
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#impression_num").text($("p.impression").length);
+    });
+  </script>
+
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-31168931-1");
+      pageTracker._trackPageview();
+    } catch (err) { }
+  </script>
 
 
-  </body>
+</body>
+
 </html>
