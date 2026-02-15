@@ -22,8 +22,21 @@
           })();
 
     </script>
+	<style>
+		.scroll {
+		  display: inline-block;
+		  color: red;
+		  font-weight: bold;
+		  white-space: nowrap;
+		  animation: move 5s linear infinite;
+		}
+		
+		@keyframes move {
+		  0% { transform: translateX(100%); }
+		  100% { transform: translateX(-100%); }
+		}
+	</style>
   </head>
-
   <body>
 
     <!-- HEADER -->
@@ -59,6 +72,7 @@
 <h3>本書の感想</h3>
 <p>(現在<span id="impression_num"></span>件の感想が寄せられています)</p>
 <p>新しいコメントは、表示されているコメントの最下部（「↑最新のコメント」と表記）に記入してください。</p>
+<p class="impression">Git初心者にもわかりやすいです.<span class="scroll" style="color:red; font-weight:bold;">@takekomi-111</span></p>
 <p class="impression">とてもわかりやすい参考書を出版してくださり本当にありがとうございます！</p>
 <p class="impression">大変分かりやすいです！この本で楽しく勉強しています！</p>
 <p class="impression">感謝です!わかりやすい!</p>
@@ -157,7 +171,7 @@
 <p class="impression">まだよくわからない！！！＞＜</p>
 <p class="impression">githubの苦手意識が一気に消えました！ありがとうございました！</p>
 <p class="impression">2016年、遅ればせながら GitHub の勉強を始めました! 分かりやすく大変参考にしております! (<a href="https://github.com/Neos21GitHub" title="GitHub - Neos21GitHub">@Neos21</a>)</p>
-<p class="impression">実践的でとても勉強になります！</p>
+<p class="impression">実践的でとても勉強になります！</p<color =>>
 <p class="impression">LGTM です！</p>
 <p class="impression">勉強中</P>
 <p class="impression">やっとこさで、ここまで来ました!</p>
